@@ -49,7 +49,7 @@ const NavBar = () => {
 }
 
 const StyledNav = styled.header`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

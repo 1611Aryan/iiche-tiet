@@ -11,6 +11,10 @@ const GlobalStyle = () => {
     :root {
       --padding: 2.5rem;
       --primary: #fff;
+      --bg: #0d1019;
+      --primaryColor: #448a9f;
+      --secondaryColor: #660e25;
+      --cursive: "Lobster", cursive;
     }
 
     body {
