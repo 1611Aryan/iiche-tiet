@@ -32,7 +32,7 @@ const StyledHome = styled.section`
   padding: 0 calc(4 * var(--padding));
 
   position: relative;
-  z-index: 2;
+  z-index: 3;
   > * {
     width: 40%;
   }

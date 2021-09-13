@@ -47,11 +47,14 @@ const StyledAboutUs = styled.section`
   width: 100%;
   height: 100vh;
   position: relative;
+  z-index: 1;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 calc(4 * var(--padding));
+
+  overflow: hidden;
 
   .circle {
     --size: 50vh;

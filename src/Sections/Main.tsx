@@ -18,6 +18,7 @@ const StyledMain = styled.section`
   height: 200vh;
 
   position: relative;
+  overflow: hidden;
 `
 
 export default Main

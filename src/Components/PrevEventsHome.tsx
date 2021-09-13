@@ -31,6 +31,8 @@ const StyledPrevEventsHome = styled.section`
   height: 100%;
   position: relative;
 
+  background: linear-gradient(to bottom, var(--bg), #000);
+
   display: flex;
   flex-direction: column;
   align-items: center;

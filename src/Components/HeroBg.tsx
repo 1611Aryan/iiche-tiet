@@ -21,6 +21,8 @@ const StyledHeroBg = styled.picture`
   width: 150%;
   height: 140vh;
 
+  z-index: 2;
+
   img {
     display: block;
     width: 100%;
