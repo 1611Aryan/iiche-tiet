@@ -24,13 +24,6 @@ const Swipe: React.FC<{
     setLength(Children.count(children))
   }, [children])
 
-  const clickHandler = () => {
-    if (position === length - 1)
-      if (loop) setPosition(0)
-      else return
-    else setPosition(position => position + 1)
-  }
-
   const touchStart = (e: React.MouseEvent) => {
     setSwipe(swipe => ({
       initial: { x: e.clientX, time: new Date().getTime() },
@@ -56,8 +49,6 @@ const Swipe: React.FC<{
 
   useEffect(() => {
     if (sliderRef.current) {
-      // if (position === 0) sliderRef.current.style.transition = "none"
-      // else sliderRef.current.style.transition = "transform ease-in-out 200ms"
       sliderRef.current.style.setProperty("--position", position.toString())
     }
   }, [position])
