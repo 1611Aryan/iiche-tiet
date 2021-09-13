@@ -66,6 +66,8 @@ const StyledDirection = styled.section`
 
   overflow: hidden;
 
+  background: linear-gradient(to bottom, var(--bg), #000);
+
   h1 {
     font-family: var(--cursive);
     font-size: 4rem;

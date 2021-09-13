@@ -70,7 +70,7 @@ const Swipe: React.FC<{
         <ul className="pagination">
           {Array(length)
             .fill(null)
-            .map((elem, index) => (
+            .map((_elem, index) => (
               <li
                 key={index}
                 className={position === index ? "active" : ""}

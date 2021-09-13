@@ -1,12 +1,22 @@
 import styled from "@emotion/styled"
 import Picture from "./Picture"
 
-const Polaroid: React.FC<{ images: { imgSrc: string; type: string }[] }> = ({
-  images,
-}) => {
+const Polaroid: React.FC<{
+  images: { imgSrc: string; type: string }[]
+  video?: boolean
+  autoplay?: boolean
+  loop?: boolean
+}> = ({ images, video, autoplay, loop }) => {
   return (
     <StyledPolaroid>
-      <Picture images={images} loading="lazy" decoding="async" />
+      <Picture
+        images={images}
+        video={video}
+        loading="lazy"
+        decoding="async"
+        autoplay={autoplay}
+        loop={loop}
+      />
     </StyledPolaroid>
   )
 }
@@ -27,10 +37,18 @@ const StyledPolaroid = styled.div`
     width: 100%;
     height: 85%;
     background: #343434;
+    overflow: hidden;
   }
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+  }
+
+  video {
+    width: 100%;
+    height: 85%;
+    background: #343434;
     object-fit: cover;
   }
 
