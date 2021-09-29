@@ -1,7 +1,6 @@
 import styled from "@emotion/styled"
 import logoPNG from "./../Media/Logo/logoWhite.png"
 import logoWEBP from "./../Media/Logo/logoWhite.webp"
-import logoAVIF from "./../Media/Logo/logoWhite.avif"
 
 const NavBar = () => {
   const navData = [
@@ -30,7 +29,6 @@ const NavBar = () => {
   return (
     <StyledNav>
       <picture>
-        <source srcSet={logoAVIF} type="image/avif" />
         <source srcSet={logoWEBP} type="image/webp" />
         <source srcSet={logoPNG} type="image/png" />
         <img src={logoPNG} alt="logo" />

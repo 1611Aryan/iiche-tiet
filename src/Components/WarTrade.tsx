@@ -42,8 +42,9 @@ const WarTrade = () => {
         <Polaroid
           images={[{ imgSrc: video, type: "video/webm" }]}
           video={true}
-          autoplay={true}
+          autoPlay={true}
           loop={true}
+          controls={false}
         />
         <Polaroid
           images={[

@@ -4,9 +4,10 @@ import Picture from "./Picture"
 const Polaroid: React.FC<{
   images: { imgSrc: string; type: string }[]
   video?: boolean
-  autoplay?: boolean
+  autoPlay?: boolean
   loop?: boolean
-}> = ({ images, video, autoplay, loop }) => {
+  controls?: boolean
+}> = ({ images, video, autoPlay, loop, controls }) => {
   return (
     <StyledPolaroid>
       <Picture
@@ -14,8 +15,9 @@ const Polaroid: React.FC<{
         video={video}
         loading="lazy"
         decoding="async"
-        autoplay={autoplay}
+        autoPlay={autoPlay}
         loop={loop}
+        controls={controls}
       />
     </StyledPolaroid>
   )

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled"
-import logoAVIF from "./../Media/Logo/Logo.avif"
 import logoWEBP from "./../Media/Logo/Logo.webp"
 import logoPNG from "./../Media/Logo/Logo.png"
 
@@ -11,7 +10,6 @@ const AboutUs = () => {
         <path d="M8 70.3048C169.082 -12.7683 186.871 -12.7683 320.282 70.3048C427.012 136.763 548.565 97.9959 596 70.3048" />
       </svg>
       <picture>
-        <source srcSet={logoAVIF} type="image/avif" />
         <source srcSet={logoWEBP} type="image/webp" />
         <source srcSet={logoPNG} type="image/png" />
         <img src={logoPNG} alt="logo" />
