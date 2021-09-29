@@ -1,8 +1,8 @@
-import PrevEventsHome from "../Components/PrevEventsHome"
-import Direction from "../Components/Direction"
-import WarTrade from "../Components/WarTrade"
-import NEC from "../Components/NEC"
-import Chemileon from "../Components/Chemileon"
+import PrevEventsHome from "../Components/PrevEvents/PrevEventsHome"
+import Direction from "../Components/PrevEvents/Direction"
+import WarTrade from "../Components/PrevEvents/WarTrade"
+import NEC from "../Components/PrevEvents/NEC"
+import Chemileon from "../Components/PrevEvents/Chemileon"
 import Swipe from "../Components/Swiper"
 
 const PreviousEvents = () => {
