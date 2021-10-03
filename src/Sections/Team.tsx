@@ -1,30 +1,17 @@
+import { useState } from "react"
 import styled from "@emotion/styled"
-import Picture from "../Components/Picture"
 
+import Picture from "../Components/Picture"
 import CoverPage from "../Components/Team/CoverPage"
 
 import bg_webp from "./../Media/Team/teamBg.webp"
 import bg_jpg from "./../Media/Team/teamBg.jpg"
-import ParthPage from "../Components/Team/ParthPage"
-import { useRef } from "react"
-import AnushkaPage from "../Components/Team/AnushkaPage"
-import LokeshwarPage from "../Components/Team/LokeshwarPage"
-import AvantikaPage from "../Components/Team/AvantikaPage"
-import PrathamPage from "../Components/Team/PrathamPage"
-import MehakPage from "../Components/Team/MehakPage"
-import JaskaranPage from "../Components/Team/JaskaranPage"
-import AryanPage from "../Components/Team/AryanPage"
+
+import TeamData from "./../Components/Team/Data"
+import Page from "./../Components/Team/Page"
 
 export const Team = () => {
-  const coverRef = useRef<HTMLDivElement>(null)
-  const firstRef = useRef<HTMLDivElement>(null)
-  const secondRef = useRef<HTMLDivElement>(null)
-  const thirdRef = useRef<HTMLDivElement>(null)
-  const fourthRef = useRef<HTMLDivElement>(null)
-  const fifthRef = useRef<HTMLDivElement>(null)
-  const sixthRef = useRef<HTMLDivElement>(null)
-  const seventhRef = useRef<HTMLDivElement>(null)
-  const eighthRef = useRef<HTMLDivElement>(null)
+  const [position, setPosition] = useState(0)
 
   return (
     <StyledSection>
@@ -37,15 +24,18 @@ export const Team = () => {
       />
       <div className="overlay"></div>
       <StyledBook>
-        <AryanPage prevRef={seventhRef} pageRef={eighthRef} />
-        <JaskaranPage prevRef={sixthRef} pageRef={seventhRef} />
-        <MehakPage prevRef={fifthRef} pageRef={sixthRef} />
-        <PrathamPage prevRef={fourthRef} pageRef={fifthRef} />
-        <AvantikaPage prevRef={thirdRef} pageRef={fourthRef} />
-        <LokeshwarPage prevRef={secondRef} pageRef={thirdRef} />
-        <AnushkaPage prevRef={firstRef} pageRef={secondRef} />
-        <ParthPage prevRef={coverRef} pageRef={firstRef} />
-        <CoverPage pageRef={coverRef} />
+        {TeamData.map((team, index) => (
+          <Page
+            index={TeamData.length - index}
+            position={position}
+            setPosition={setPosition}
+            member={team.member}
+            images={team.images}
+            numOfPages={TeamData.length}
+            key={index}
+          />
+        ))}
+        <CoverPage position={position} setPosition={setPosition} />
       </StyledBook>
     </StyledSection>
   )
@@ -85,10 +75,10 @@ const StyledSection = styled.section`
 `
 
 const StyledBook = styled.div`
-  width: 50%;
-  height: 85%;
+  width: 48%;
+  height: 78%;
   position: relative;
-  perspective-origin: left;
+
   perspective: 2000px;
 
   &::after {
