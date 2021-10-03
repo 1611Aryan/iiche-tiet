@@ -17,8 +17,8 @@ export const Team = () => {
     <StyledSection>
       <Picture
         images={[
-          { imgSrc: bg_webp, type: "img/webp" },
-          { imgSrc: bg_jpg, type: "img/jpg" },
+          { imgSrc: bg_webp, type: "image/webp" },
+          { imgSrc: bg_jpg, type: "image/jpg" },
         ]}
         className="bg"
       />
@@ -69,8 +69,8 @@ const StyledSection = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #000, #0008);
-    backdrop-filter: blur(5px);
+    background: linear-gradient(to bottom, #000, #0008, #000d);
+    //    backdrop-filter: blur(5px);
   }
 `
 
@@ -88,7 +88,7 @@ const StyledBook = styled.div`
     left: -2rem;
     width: 100%;
     height: 100%;
-    background: #356c7c;
+    background: #2e5d6b;
     border-radius: 10px 0 0 10px;
   }
 

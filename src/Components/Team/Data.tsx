@@ -35,8 +35,8 @@ const teamData: {
 }[] = [
   {
     images: [
-      { imgSrc: parth_webp, type: "img/webp" },
-      { imgSrc: parth_jpg, type: "img/jpg" },
+      { imgSrc: parth_webp, type: "image/webp" },
+      { imgSrc: parth_jpg, type: "image/jpg" },
     ],
     member: {
       name: "Parth Sood",
@@ -46,10 +46,10 @@ const teamData: {
   },
   {
     images: [
-      { imgSrc: anushka_webp, type: "img/webp" },
+      { imgSrc: anushka_webp, type: "image/webp" },
       {
         imgSrc: anushka_jpg,
-        type: "img/jpg",
+        type: "image/jpg",
       },
     ],
     member: {
@@ -60,10 +60,10 @@ const teamData: {
   },
   {
     images: [
-      { imgSrc: lokeshwar_webp, type: "img/webp" },
+      { imgSrc: lokeshwar_webp, type: "image/webp" },
       {
         imgSrc: lokeshwar_jpg,
-        type: "img/jpg",
+        type: "image/jpg",
       },
     ],
     member: {
@@ -74,10 +74,10 @@ const teamData: {
   },
   {
     images: [
-      { imgSrc: avantika_webp, type: "img/webp" },
+      { imgSrc: avantika_webp, type: "image/webp" },
       {
         imgSrc: avantika_jpg,
-        type: "img/jpg",
+        type: "image/jpg",
       },
     ],
     member: {
@@ -92,10 +92,10 @@ const teamData: {
   },
   {
     images: [
-      { imgSrc: pratham_webp, type: "img/webp" },
+      { imgSrc: pratham_webp, type: "image/webp" },
       {
         imgSrc: pratham_jpg,
-        type: "img/jpg",
+        type: "image/jpg",
       },
     ],
     member: {
@@ -106,10 +106,10 @@ const teamData: {
   },
   {
     images: [
-      { imgSrc: mehak_webp, type: "img/webp" },
+      { imgSrc: mehak_webp, type: "image/webp" },
       {
         imgSrc: mehak_jpg,
-        type: "img/jpg",
+        type: "image/jpg",
       },
     ],
     member: {
@@ -120,10 +120,10 @@ const teamData: {
   },
   {
     images: [
-      { imgSrc: jaskaran_webp, type: "img/webp" },
+      { imgSrc: jaskaran_webp, type: "image/webp" },
       {
         imgSrc: jaskaran_jpg,
-        type: "img/jpg",
+        type: "image/jpg",
       },
     ],
     member: {
@@ -134,10 +134,10 @@ const teamData: {
   },
   {
     images: [
-      { imgSrc: aryan_webp, type: "img/webp" },
+      { imgSrc: aryan_webp, type: "image/webp" },
       {
         imgSrc: aryan_jpg,
-        type: "img/jpg",
+        type: "image/jpg",
       },
     ],
     member: {

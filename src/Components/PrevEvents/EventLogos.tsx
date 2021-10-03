@@ -25,8 +25,8 @@ const EventLogos = () => {
       />
       <EventLogo
         images={[
-          { imgSrc: wartradeLogo_WEBP, type: "images/webp" },
-          { imgSrc: wartradeLogo_PNG, type: "images/png" },
+          { imgSrc: wartradeLogo_WEBP, type: "image/webp" },
+          { imgSrc: wartradeLogo_PNG, type: "image/png" },
         ]}
       />
       <EventLogo

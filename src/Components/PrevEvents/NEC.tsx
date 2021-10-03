@@ -56,7 +56,7 @@ const NEC = () => {
         />
         <Polaroid
           images={[
-            { imgSrc: ss_webp, type: "img/webp" },
+            { imgSrc: ss_webp, type: "image/webp" },
             { imgSrc: ss_jpg, type: "image/jpg" },
           ]}
         />

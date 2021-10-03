@@ -22,16 +22,16 @@ const CoverPage: React.FC<{
       <div className="front">
         <Picture
           images={[
-            { imgSrc: logo_webp, type: "img/webp" },
-            { imgSrc: logo_png, type: "img/png" },
+            { imgSrc: logo_webp, type: "image/webp" },
+            { imgSrc: logo_png, type: "image/png" },
           ]}
           className="logo"
         />
 
         <Picture
           images={[
-            { imgSrc: cover_webp, type: "img/webp" },
-            { imgSrc: cover_jpg, type: "img/jpg" },
+            { imgSrc: cover_webp, type: "image/webp" },
+            { imgSrc: cover_jpg, type: "image/jpg" },
           ]}
           className="coverPhoto"
         />
@@ -83,6 +83,8 @@ const StyledCoverPage = styled.div`
     display: grid;
     place-items: center;
 
+    overflow: hidden;
+
     background: var(--primaryColor);
     padding: 2rem;
   }
@@ -130,15 +132,18 @@ const StyledCoverPage = styled.div`
 
   .coverPhoto {
     position: absolute;
-    bottom: 5rem;
-    right: 5rem;
-    width: 55%;
-    transform: rotate(-25deg);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    filter: blur(5px) contrast(80%);
 
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 0 10px 10px 0;
     }
   }
 

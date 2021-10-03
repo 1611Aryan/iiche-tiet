@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import logoPNG from "./../Media/Logo/logoWhite.png"
 import logoWEBP from "./../Media/Logo/logoWhite.webp"
+import Picture from "./Picture"
 
 const NavBar = () => {
   const navData = [
@@ -28,11 +29,12 @@ const NavBar = () => {
 
   return (
     <StyledNav>
-      <picture>
-        <source srcSet={logoWEBP} type="image/webp" />
-        <source srcSet={logoPNG} type="image/png" />
-        <img src={logoPNG} alt="logo" />
-      </picture>
+      <Picture
+        images={[
+          { imgSrc: logoWEBP, type: "image/webp" },
+          { imgSrc: logoPNG, type: "image/png" },
+        ]}
+      />
       <nav>
         <ul>
           {navData.map((data, index) => (
