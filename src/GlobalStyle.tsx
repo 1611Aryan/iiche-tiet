@@ -9,7 +9,7 @@ const GlobalStyle = () => {
     }
 
     :root {
-      --padding: 2.5rem;
+      --padding: clamp(1rem, 3vw, 2.5rem);
       --primary: #fff;
       --bg: #0d1019;
       --primaryColor: #448a9f;

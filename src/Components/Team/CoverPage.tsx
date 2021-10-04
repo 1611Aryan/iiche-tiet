@@ -86,7 +86,7 @@ const StyledCoverPage = styled.div`
     overflow: hidden;
 
     background: var(--primaryColor);
-    padding: 2rem;
+    padding: clamp(1rem, 3vw, 2rem);
   }
 
   .logo {
@@ -103,9 +103,9 @@ const StyledCoverPage = styled.div`
     z-index: 2;
     width: 100%;
     color: #fff;
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 5vw, 5rem);
     line-height: 1;
-    margin-bottom: 3rem;
+    margin-bottom: clamp(1rem, 4vw, 3rem);
   }
 
   .circle {
@@ -115,16 +115,16 @@ const StyledCoverPage = styled.div`
   }
 
   .small {
-    width: 200px;
-    height: 200px;
+    width: 18vw;
+    height: 18vw;
     top: 20%;
     right: 15%;
     background: rgba(20, 65, 27, 0.4);
   }
 
   .large {
-    width: 350px;
-    height: 350px;
+    width: 30vw;
+    height: 30vw;
     bottom: 5%;
     left: 5%;
     background: rgba(0, 0, 0, 0.4);
@@ -149,9 +149,9 @@ const StyledCoverPage = styled.div`
 
   svg {
     position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    font-size: 2.5rem;
+    bottom: clamp(1rem, 3vw, 2rem);
+    right: clamp(1rem, 3vw, 2rem);
+    font-size: clamp(1rem, 3vw, 2.5rem);
     cursor: pointer;
     color: #fffa;
     transition: color ease 100ms;

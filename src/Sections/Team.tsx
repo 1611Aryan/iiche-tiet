@@ -95,6 +95,11 @@ const StyledBook = styled.div`
   .turn {
     transform: rotateY(-180deg);
   }
+
+  @media only screen and (max-width: 500px) {
+    width: 90%;
+    height: 50%;
+  }
 `
 
 export default Team

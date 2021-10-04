@@ -108,7 +108,7 @@ const StyledPage = styled.div`
     background: var(--primaryColor);
     border-left: 2px dashed #fff8;
 
-    padding: 2rem;
+    padding: clamp(1rem, 3vw, 2rem);
 
     .bg {
       position: absolute;
@@ -130,7 +130,7 @@ const StyledPage = styled.div`
       width: 100%;
       display: flex;
       justify-content: space-between;
-      gap: 2.5em;
+      gap: clamp(1rem, 3vw, 2.5rem);
     }
 
     .column {
@@ -168,7 +168,7 @@ const StyledPage = styled.div`
       .content {
         margin-top: 2rem;
         color: #fff;
-        font-size: 2rem;
+        font-size: clamp(0.9rem, 3vw, 2rem);
         line-height: 1;
         .name {
           font-weight: 700;
@@ -181,7 +181,7 @@ const StyledPage = styled.div`
 
       .info {
         color: #fff;
-        font-size: 1.3rem;
+        font-size: clamp(0.7rem, 3vw, 1.3rem);
         position: relative;
         p {
           position: relative;
@@ -199,14 +199,14 @@ const StyledPage = styled.div`
         }
       }
       .logos {
-        margin-top: 2rem;
+        margin-top: clamp(0.5rem, 3vw, 2rem);
         width: 100%;
         display: flex;
         justify-content: flex-start;
-        gap: 2rem;
+        gap: clamp(1rem, 3vw, 2rem);
         align-items: center;
         color: #fffa;
-        font-size: 2rem;
+        font-size: clamp(1rem, 3vw, 2rem);
         svg {
           cursor: pointer;
           transition: color 200ms;
@@ -243,7 +243,7 @@ const StyledPage = styled.div`
     }
 
     .button {
-      font-size: 2.5rem;
+      font-size: clamp(1rem, 3vw, 2.5rem);
       cursor: pointer;
       color: #fff8;
       transition: color 200ms;

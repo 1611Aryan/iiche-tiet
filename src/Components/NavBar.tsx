@@ -58,6 +58,7 @@ const StyledNav = styled.header`
   justify-content: space-between;
   align-items: center;
   z-index: 5;
+  overflow: hidden;
 
   picture {
     height: 10vh;
@@ -110,6 +111,12 @@ const StyledNav = styled.header`
           border-bottom-color: #fbff00;
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    picture {
+      height: 5vh;
     }
   }
 `

@@ -84,9 +84,9 @@ const teamData: {
       name: "Avantika Garg",
       designation: "PR Head",
       info: `A Pre-Final pursuing Mechantronics Engineering and established as the Head of PR&Marketing IICHE.
-<br />
+
       He Y'all! I am the one with no closed doors so you are always welcome!
-      <br />
+
       I got some sunshine in my pocket as the world is full of rainbows and unicorns, so lets see beyond the dark as the night changes from dusk to dawn.`,
     },
   },
