@@ -68,7 +68,7 @@ const StyledPrevEventsHome = styled.section`
       stroke-linecap: round;
       filter: blur(10px);
       stroke-dasharray: 3000;
-      stroke-dashoffset: 3000;
+      stroke-dashoffset: -3000;
       animation: dash ease 2s forwards;
     }
 

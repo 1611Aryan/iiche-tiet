@@ -3,8 +3,8 @@ import styled from "@emotion/styled"
 import directionLogo_PNG from "./../../Media/Previous Events/Logo/Direction.png"
 import directionLogo_WEBP from "./../../Media/Previous Events/Logo/Direction.webp"
 
-import wartradeLogo_PNG from "./../../Media/Previous Events/Logo/War Trade.png"
-import wartradeLogo_WEBP from "./../../Media/Previous Events/Logo/War Trade.webp"
+import wartradeLogo_PNG from "./../../Media/Previous Events/Logo/WarTrade.png"
+import wartradeLogo_WEBP from "./../../Media/Previous Events/Logo/WarTrade.webp"
 
 import chemileonLogo_PNG from "./../../Media/Previous Events/Logo/Chem-i-Leon.png"
 import chemileonLogo_WEBP from "./../../Media/Previous Events/Logo/Chem-i-Leon.webp"

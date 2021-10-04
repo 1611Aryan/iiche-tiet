@@ -17,10 +17,10 @@ const NavBar = () => {
       name: "OUR TEAM",
       link: "team",
     },
-    {
-      name: "ANNOUNCEMENTS",
-      link: "announcements",
-    },
+    // {
+    //   name: "ANNOUNCEMENTS",
+    //   link: "announcements",
+    // },
     {
       name: "CONTACT US",
       link: "contactUs",

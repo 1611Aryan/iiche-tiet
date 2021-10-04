@@ -16,6 +16,8 @@ const StyledEvent = styled.section`
   flex-direction: column;
 
   position: relative;
+  color: #fff;
+  overflow: hidden;
 
   .bg {
     position: absolute;
@@ -28,6 +30,7 @@ const StyledEvent = styled.section`
       width: 100%;
       height: 100%;
       object-fit: cover;
+      filter: blur(5px);
     }
   }
 
@@ -38,8 +41,6 @@ const StyledEvent = styled.section`
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, #0d1019, #000a);
-
-    backdrop-filter: blur(5px);
   }
 
   h1 {

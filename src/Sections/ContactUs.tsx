@@ -7,13 +7,32 @@ import {
 } from "react-icons/io5"
 import { FaPhone } from "react-icons/fa"
 import { AiFillMail } from "react-icons/ai"
+import { useEffect, useRef, useState } from "react"
 
 const ContactUs = () => {
+  const linesRef = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => setVisible(entries[0].isIntersecting),
+      { root: null, threshold: 0.25 }
+    )
+    linesRef.current && observer.observe(linesRef.current)
+
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      linesRef.current && observer.unobserve(linesRef.current)
+    }
+  }, [linesRef])
+
   return (
-    <StyledSection>
+    <StyledSection ref={linesRef}>
       <div className="circle one"></div>
       <div className="circle second"></div>
       <header>
+        <div className={`lines ${visible ? "visible" : ""}`}></div>
+
         <h2>Contact Us</h2>
       </header>
       <div className="content">
@@ -86,26 +105,40 @@ const StyledSection = styled.section`
     z-index: 2;
     position: relative;
     --height: 8px;
-    &::before {
-      content: "";
+    .lines {
       position: absolute;
-      top: 16px;
-      left: -8rem;
-      width: 100vw;
-      height: var(--height);
-      background: var(--primaryColor);
-      filter: blur(2px);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translate(-120%);
+      transition: transform ease-in-out 400ms;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: -8rem;
+        width: 100vw;
+        height: var(--height);
+        background: var(--primaryColor);
+        filter: blur(2px);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 36px;
+        left: -8rem;
+        width: 100vw;
+        height: var(--height);
+        background: var(--secondaryColor);
+        filter: blur(2px);
+      }
     }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 36px;
-      left: -8rem;
-      width: 100vw;
-      height: var(--height);
-      background: var(--secondaryColor);
-      filter: blur(2px);
+
+    .visible {
+      transform: translate(0px);
     }
+
     h2 {
       position: relative;
       z-index: 2;

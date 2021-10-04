@@ -1,21 +1,43 @@
 import styled from "@emotion/styled"
+
 import logoWEBP from "./../Media/Logo/Logo.webp"
 import logoPNG from "./../Media/Logo/Logo.png"
+import { useEffect, useRef, useState } from "react"
 
 const AboutUs = () => {
+  const logoRef = useRef<HTMLPictureElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => setVisible(entries[0].isIntersecting),
+      { root: null, threshold: 0.25 }
+    )
+    logoRef.current && observer.observe(logoRef.current)
+
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      logoRef.current && observer.unobserve(logoRef.current)
+    }
+  }, [logoRef])
+
   return (
     <StyledAboutUs>
       <div className="circle"></div>
       <svg viewBox="0 0 604 120" fill="none">
-        <path d="M8 70.3048C169.082 -12.7683 186.871 -12.7683 320.282 70.3048C427.012 136.763 548.565 97.9959 596 70.3048" />
+        <path
+          className={visible ? "dash" : "'"}
+          d="M8 70.3048C169.082 -12.7683 186.871 -12.7683 320.282 70.3048C427.012 136.763 548.565 97.9959 596 70.3048"
+        />
       </svg>
-      <picture>
+
+      <picture ref={logoRef} className={visible ? "reset" : "'"}>
         <source srcSet={logoWEBP} type="image/webp" />
         <source srcSet={logoPNG} type="image/png" />
         <img src={logoPNG} alt="logo" />
       </picture>
 
-      <div className="content">
+      <div className={` content ${visible ? "reset" : ""}`}>
         <h1>About Us</h1>
         <p>
           Indian Institute of Chemical Engineers is an organization which was
@@ -70,16 +92,19 @@ const StyledAboutUs = styled.section`
     position: absolute;
     top: 60%;
     right: 0;
-    width: 50vw;
-    transform: rotate(-25deg) translate(40%);
+    width: 55vw;
+    transform: rotate(-25deg) translate(30%);
     path {
       stroke: var(--secondaryColor);
       stroke-width: 10;
       stroke-linecap: round;
       filter: blur(5px);
       stroke-dasharray: 450;
-      stroke-dashoffset: 450;
-      animation: dash ease-in-out 1s forwards;
+      stroke-dashoffset: -450;
+      transition: all ease-in-out 800ms;
+    }
+    .dash {
+      stroke-dashoffset: 0;
     }
   }
 
@@ -87,7 +112,10 @@ const StyledAboutUs = styled.section`
     position: relative;
     z-index: 2;
     width: 30%;
-    height: auto;
+    aspect-ratio: 1/1;
+    transform: translate(-100%);
+    opacity: 0;
+    transition: all ease-in-out 250ms;
     img {
       width: 100%;
       object-fit: cover;
@@ -99,6 +127,9 @@ const StyledAboutUs = styled.section`
     position: relative;
     z-index: 2;
     color: white;
+    transform: translate(100%);
+    opacity: 0;
+    transition: all ease-in-out 250ms;
 
     h1 {
       font-size: 3rem;
@@ -109,6 +140,11 @@ const StyledAboutUs = styled.section`
       font-size: 1.2rem;
       margin-top: 1rem;
     }
+  }
+
+  .reset {
+    transform: translate(0);
+    opacity: 1;
   }
 `
 
