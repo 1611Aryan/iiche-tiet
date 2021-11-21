@@ -8,22 +8,15 @@ import {
   IoLogoTwitter,
 } from "react-icons/io5"
 import Picture from "../Picture"
+import { member } from "./Data"
 
 const Page: React.FC<{
-  member: {
-    name: string
-    designation: string
-    info: string
-  }
-  images: {
-    imgSrc: string
-    type: string
-  }[]
+  member: member
   index: number
   position: number
   setPosition: React.Dispatch<React.SetStateAction<number>>
   numOfPages: number
-}> = ({ member, images, index, setPosition, position, numOfPages }) => {
+}> = ({ member, index, setPosition, position, numOfPages }) => {
   const nextPage = () => {
     if (position === numOfPages) return
     setPosition(position => index + 1)
@@ -36,24 +29,59 @@ const Page: React.FC<{
   return (
     <StyledPage className={position > index ? "turn" : ""}>
       <div className="front">
-        <Picture className="bg" images={images} />
+        <Picture className="bg" images={member.images} />
         <div className="row">
           <div className="one column">
-            <Picture className="display" images={images} />
+            <Picture className="display" images={member.images} />
             <div className="content">
-              <div className="name">{member.name}</div>
-              <div className="designation">{member.designation}</div>
+              <div className="name">{member.details.name}</div>
+              <div className="designation">{member.details.designation}</div>
             </div>
           </div>
           <div className="column">
             <div className="info">
-              <p>{member.info}</p>
+              <p>{member.details.info}</p>
             </div>
             <div className="logos">
-              <IoLogoInstagram />
-              <IoLogoFacebook />
-              <IoLogoLinkedin />
-              <IoLogoTwitter />
+              {member.socials.map((handle, index) =>
+                handle.type === "instagram" ? (
+                  <a
+                    key={index}
+                    href={handle.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IoLogoInstagram />
+                  </a>
+                ) : handle.type === "facebook" ? (
+                  <a
+                    key={index}
+                    href={handle.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IoLogoFacebook />
+                  </a>
+                ) : handle.type === "linkedin" ? (
+                  <a
+                    key={index}
+                    href={handle.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IoLogoLinkedin />
+                  </a>
+                ) : (
+                  <a
+                    key={index}
+                    href={handle.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IoLogoTwitter />
+                  </a>
+                )
+              )}
             </div>
           </div>
         </div>

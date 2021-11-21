@@ -29,13 +29,10 @@ const NEC = () => {
       <div className="overlay"></div>
       <h1>NEC</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptates
-        beatae corrupti numquam fugit laborum recusandae praesentium ipsum, enim
-        aut aliquid distinctio magni doloribus alias? Doloremque blanditiis
-        placeat consequuntur itaque! Nihil nam ratione excepturi non hic eius
-        aut consectetur magni illo officiis, libero incidunt natus, dolor esse.
-        At consequuntur eius commodi qui expedita temporibus non, totam
-        distinctio eveniet. Reprehenderit, dolor?
+        NEC was a National level conference where students interacted about
+        Robotics, How Technology has changed over the past 20 years, Why
+        Engineers prefer MBA, Challenges faced by youth etc. with the speakers
+        and other guests.
       </p>
       <div className="images">
         <Polaroid

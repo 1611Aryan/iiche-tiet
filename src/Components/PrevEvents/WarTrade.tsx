@@ -30,13 +30,13 @@ const WarTrade = () => {
       <div className="overlay"></div>
       <h1>WarTrade</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptates
-        beatae corrupti numquam fugit laborum recusandae praesentium ipsum, enim
-        aut aliquid distinctio magni doloribus alias? Doloremque blanditiis
-        placeat consequuntur itaque! Nihil nam ratione excepturi non hic eius
-        aut consectetur magni illo officiis, libero incidunt natus, dolor esse.
-        At consequuntur eius commodi qui expedita temporibus non, totam
-        distinctio eveniet. Reprehenderit, dolor?
+        A two day event which involved a lot of brainstorming and negotiation
+        skills. Participants collaborated in teams of representative countries
+        with a preassigned monetary budget and battled it out with other teams
+        by boasting their superior firepower in terms of bombs and negotiation
+        skills. Mr. Sanjay Gupta (Brand Ambassdor of TIET) being the special
+        guest. The event was sponsored by Airmeet.com, Sharp Brain Classes, Give
+        My Certificate and CollegeBros.
       </p>
       <div className="images">
         <Polaroid

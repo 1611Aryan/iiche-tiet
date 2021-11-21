@@ -24,13 +24,12 @@ export const Team = () => {
       />
       <div className="overlay"></div>
       <StyledBook>
-        {TeamData.map((team, index) => (
+        {TeamData.map((member, index) => (
           <Page
             index={TeamData.length - index}
             position={position}
             setPosition={setPosition}
-            member={team.member}
-            images={team.images}
+            member={member}
             numOfPages={TeamData.length}
             key={index}
           />

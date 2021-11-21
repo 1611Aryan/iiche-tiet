@@ -24,6 +24,16 @@ const GlobalStyle = () => {
 
       background: #0d1019;
     }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    h1 {
+      font-size: 4rem;
+      line-height: 1;
+    }
   `
 
   return <Global styles={Styles} />

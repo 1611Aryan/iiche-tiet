@@ -37,11 +37,11 @@ const CoverPage: React.FC<{
         />
         <div className="circle small"></div>
         <div className="circle large"></div>
-        <h2>
+        <h1>
           OUR
           <br />
           TEAM
-        </h2>
+        </h1>
         <IoArrowRedo onClick={nextPage} />
       </div>
       <div className="back"></div>
@@ -99,13 +99,11 @@ const StyledCoverPage = styled.div`
     }
   }
 
-  h2 {
+  h1 {
     z-index: 2;
-    width: 100%;
+    text-align: center;
     color: #fff;
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    line-height: 1;
-    margin-bottom: clamp(1rem, 4vw, 3rem);
+    font-size: 5rem;
   }
 
   .circle {

@@ -15,6 +15,13 @@ const EventLogo: React.FC<{ images: { imgSrc: string; type: string }[] }> = ({
 const StyledLogo = styled.div`
   width: 13%;
   position: relative;
+
+  transition: transform 200ms;
+
+  &:hover {
+    transform: scale(0.9);
+  }
+
   picture {
     width: 100%;
     img {
@@ -25,6 +32,10 @@ const StyledLogo = styled.div`
   &:first-of-type,
   &:last-of-type {
     transform: translateY(5em);
+
+    &:hover {
+      transform: translateY(5em) scale(0.9);
+    }
   }
 
   & > :first-of-type {

@@ -29,13 +29,9 @@ const Chemileon = () => {
       <div className="overlay"></div>
       <h1>Chemileon</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptates
-        beatae corrupti numquam fugit laborum recusandae praesentium ipsum, enim
-        aut aliquid distinctio magni doloribus alias? Doloremque blanditiis
-        placeat consequuntur itaque! Nihil nam ratione excepturi non hic eius
-        aut consectetur magni illo officiis, libero incidunt natus, dolor esse.
-        At consequuntur eius commodi qui expedita temporibus non, totam
-        distinctio eveniet. Reprehenderit, dolor?
+        Chem-i-Leon was a virtual treasure hunt where teams competed against
+        each other to win exciting prizes. The event was sponsored by GrabOn,
+        GeeksforGeeks, repl.it, balsamiq and taskade.
       </p>
       <div className="images">
         <Polaroid

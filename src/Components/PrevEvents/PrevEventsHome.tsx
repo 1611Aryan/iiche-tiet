@@ -84,8 +84,6 @@ const StyledPrevEventsHome = styled.section`
     z-index: 2;
     color: #fff;
     text-align: center;
-    font-size: 3rem;
-    font-weight: 700;
   }
   .swipe {
     font-size: 2rem;

@@ -33,30 +33,57 @@ const ContactUs = () => {
       <header>
         <div className={`lines ${visible ? "visible" : ""}`}></div>
 
-        <h2>Contact Us</h2>
+        <h1>Contact Us</h1>
       </header>
       <div className="content">
         <div className="message">
-          Facilisis varius amet in erat netus a gravida vehicula. Dolor mi,
-          tempus dignissim maecenas adipiscing a eget sed maecenas. Tincidunt
-          pulvinar
+          We can crack your morse code, but if your flashlight's battery runs
+          out, here's a back up for you.
         </div>
         <div className="contact">
           <div className="phone">
             <FaPhone />
             <span>Parth: +917986810284</span>
           </div>
-          <div className="email">
-            <AiFillMail />
-            <span>iiche.tiet@gmail.com</span>
-          </div>
+          <a href="mailto:iiche.tiet@gmail.com">
+            <div className="email">
+              <AiFillMail />
+              <span>iiche.tiet@gmail.com</span>
+            </div>
+          </a>
         </div>
       </div>
       <div className="handles">
-        <IoLogoFacebook />
-        <IoLogoInstagram />
-        <IoLogoLinkedin />
-        <IoLogoTwitter />
+        <a
+          href="https://www.facebook.com/IIChE-TIET-Student-Chapter-101382642299317"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IoLogoFacebook />
+        </a>
+
+        <a
+          href="https://www.instagram.com/iiche.tiet/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IoLogoInstagram />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/company/indian-institute-of-chemical-engineers-iiche-tiet"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IoLogoLinkedin />
+        </a>
+        <a
+          href="https://twitter.com/IIChE_TIET"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IoLogoTwitter />
+        </a>
       </div>
     </StyledSection>
   )
@@ -139,11 +166,9 @@ const StyledSection = styled.section`
       transform: translate(0px);
     }
 
-    h2 {
+    h1 {
       position: relative;
       z-index: 2;
-      font-size: 4rem;
-      line-height: 1;
     }
   }
 
@@ -157,6 +182,12 @@ const StyledSection = styled.section`
       font-size: 1.8rem;
     }
     .contact {
+      > * + * {
+        margin-top: 1.5rem;
+      }
+      a {
+        display: block;
+      }
       div {
         display: flex;
         justify-content: flex-start;
@@ -169,9 +200,6 @@ const StyledSection = styled.section`
           font-size: 1.5rem;
         }
       }
-      > * + * {
-        margin-top: 1.5rem;
-      }
     }
   }
 
@@ -181,6 +209,21 @@ const StyledSection = styled.section`
     cursor: pointer;
     > * + * {
       margin-left: 2rem;
+    }
+
+    a {
+      display: inline-block;
+      transition: transform 200ms, color 100ms;
+      &:hover {
+        transform: scale(1.1);
+
+        &:nth-of-type(odd) {
+          color: var(--primaryColor);
+        }
+        &:nth-of-type(even) {
+          color: var(--secondaryColor);
+        }
+      }
     }
   }
 `

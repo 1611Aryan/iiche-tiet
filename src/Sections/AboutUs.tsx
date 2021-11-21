@@ -131,10 +131,6 @@ const StyledAboutUs = styled.section`
     opacity: 0;
     transition: all ease-in-out 250ms;
 
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-    }
     p {
       font-weight: 400;
       font-size: 1.2rem;

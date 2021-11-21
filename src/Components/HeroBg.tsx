@@ -8,7 +8,7 @@ const HeroBg = () => {
     <StyledHeroBg>
       <source srcSet={homeBgAVIF} type="image/avif" />
       <source srcSet={homeBgWEBP} type="image/webp" />
-      <source srcSet={homeBgJPG} type="image/jpeg" />
+      <source srcSet={homeBgJPG} type="image/jpg" />
       <img src={homeBgJPG} alt="home" />
     </StyledHeroBg>
   )
