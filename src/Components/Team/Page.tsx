@@ -107,7 +107,7 @@ const StyledPage = styled.div`
 
   transform-origin: left center;
   transform-style: preserve-3d;
-  transition: transform ease-in-out 500ms;
+  transition: transform ease 500ms;
   .back {
     position: absolute;
     top: 0;
@@ -271,7 +271,7 @@ const StyledPage = styled.div`
     }
 
     .button {
-      font-size: clamp(1rem, 3vw, 2.5rem);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
       cursor: pointer;
       color: #fff8;
       transition: color 200ms;

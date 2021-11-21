@@ -103,7 +103,7 @@ const StyledCoverPage = styled.div`
     z-index: 2;
     text-align: center;
     color: #fff;
-    font-size: 5rem;
+    font-size: clamp(3rem, 7vw, 5rem);
   }
 
   .circle {
@@ -149,7 +149,7 @@ const StyledCoverPage = styled.div`
     position: absolute;
     bottom: clamp(1rem, 3vw, 2rem);
     right: clamp(1rem, 3vw, 2rem);
-    font-size: clamp(1rem, 3vw, 2.5rem);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     cursor: pointer;
     color: #fffa;
     transition: color ease 100ms;

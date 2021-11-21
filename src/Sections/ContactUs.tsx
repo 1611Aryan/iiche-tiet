@@ -105,6 +105,8 @@ const StyledSection = styled.section`
   padding: 0 8rem;
   color: #fff;
 
+  padding: 0 var(--padding);
+
   .circle {
     position: absolute;
 
@@ -136,8 +138,8 @@ const StyledSection = styled.section`
     .lines {
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
+      left: calc(-2 * var(--padding));
+      width: calc(100vw + 2 * var(--padding));
       height: 100%;
       transform: translate(-120%);
       transition: transform ease-in-out 400ms;
@@ -145,8 +147,8 @@ const StyledSection = styled.section`
         content: "";
         position: absolute;
         top: 16px;
-        left: -8rem;
-        width: 100vw;
+        left: 0rem;
+        width: 100%;
         height: var(--height);
         background: var(--primaryColor);
         filter: blur(2px);
@@ -155,8 +157,8 @@ const StyledSection = styled.section`
         content: "";
         position: absolute;
         top: 36px;
-        left: -8rem;
-        width: 100vw;
+        left: 0rem;
+        width: 100%;
         height: var(--height);
         background: var(--secondaryColor);
         filter: blur(2px);
@@ -180,7 +182,7 @@ const StyledSection = styled.section`
     align-items: center;
     .message {
       width: 50%;
-      font-size: 1.8rem;
+      font-size: clamp(1rem, 2vw, 1.8rem);
     }
     .contact {
       > * + * {
@@ -194,11 +196,11 @@ const StyledSection = styled.section`
         justify-content: flex-start;
         align-items: center;
         svg {
-          font-size: 3rem;
+          font-size: clamp(1rem, 4vw, 3rem);
         }
         span {
-          margin-left: 2rem;
-          font-size: 1.5rem;
+          margin-left: clamp(0.75rem, 2vw, 2rem);
+          font-size: clamp(0.9rem, 2vw, 1.5rem);
         }
       }
     }
@@ -206,10 +208,10 @@ const StyledSection = styled.section`
 
   .handles {
     z-index: 2;
-    font-size: 2.5rem;
+    font-size: clamp(1.25rem, 3vw, 2.5rem);
     cursor: pointer;
     > * + * {
-      margin-left: 2rem;
+      margin-left: clamp(1rem, 3vw, 2rem);
     }
 
     a {
@@ -224,6 +226,31 @@ const StyledSection = styled.section`
         &:nth-of-type(even) {
           color: var(--secondaryColor);
         }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .circle {
+      filter: blur(50px);
+    }
+    .one {
+      width: 40%;
+    }
+
+    .second {
+      width: 55%;
+    }
+
+    .content {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      .message {
+        width: 80%;
+      }
+      > * + * {
+        margin-top: 1.5rem;
       }
     }
   }

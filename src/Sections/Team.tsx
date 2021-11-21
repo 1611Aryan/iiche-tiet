@@ -46,10 +46,13 @@ const StyledSection = styled.section`
   overflow: hidden;
 
   background: linear-gradient(to bottom, #000, var(--secondaryColor));
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   position: relative;
+
+  padding: 0 var(--padding);
 
   .bg {
     position: absolute;
@@ -80,11 +83,13 @@ const StyledBook = styled.div`
 
   perspective: 2000px;
 
+  margin-left: clamp(1rem, 3vw, 2rem);
+
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -2rem;
+    left: calc(-1 * clamp(1rem, 3vw, 2rem));
     width: 100%;
     height: 100%;
     background: #2e5d6b;
@@ -96,8 +101,10 @@ const StyledBook = styled.div`
   }
 
   @media only screen and (max-width: 500px) {
-    width: 90%;
+    width: 100%;
     height: 50%;
+
+    perspective: 500px;
   }
 `
 
