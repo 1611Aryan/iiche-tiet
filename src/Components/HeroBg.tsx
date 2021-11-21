@@ -30,6 +30,19 @@ const StyledHeroBg = styled.picture`
     object-fit: cover;
     filter: blur(50px);
   }
+
+  @media only screen and (max-width: 500px) {
+    width: 200%;
+    height: 140vh;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(50px);
+    }
+  }
 `
 
 export default HeroBg

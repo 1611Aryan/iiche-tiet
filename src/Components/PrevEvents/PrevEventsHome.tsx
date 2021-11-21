@@ -37,6 +37,8 @@ const StyledPrevEventsHome = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+
+  padding: 0 var(--padding);
   .triangle {
     --size: 30vw;
 
@@ -86,7 +88,7 @@ const StyledPrevEventsHome = styled.section`
     text-align: center;
   }
   .swipe {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 3vw, 2rem);
     font-family: var(--cursive);
     color: white;
     display: flex;
@@ -98,6 +100,12 @@ const StyledPrevEventsHome = styled.section`
 
     svg {
       width: 12ch;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .triangle {
+      --size: 35vh;
     }
   }
 `

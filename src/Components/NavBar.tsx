@@ -1,20 +1,20 @@
 import styled from "@emotion/styled"
+import smallLogo from "./../Media/Logo/Logo.webp"
 import logoPNG from "./../Media/Logo/logoWhite.png"
 import logoWEBP from "./../Media/Logo/logoWhite.webp"
-import Picture from "./Picture"
 
 const NavBar = () => {
   const navData = [
     {
-      name: "ABOUT US",
+      name: "ABOUT",
       link: "aboutUs",
     },
     {
-      name: "PREVIOUS EVENTS",
+      name: "EVENTS",
       link: "prevEvents",
     },
     {
-      name: "OUR TEAM",
+      name: "TEAM",
       link: "team",
     },
     // {
@@ -22,19 +22,23 @@ const NavBar = () => {
     //   link: "announcements",
     // },
     {
-      name: "CONTACT US",
+      name: "CONTACT",
       link: "contactUs",
     },
   ]
 
   return (
     <StyledNav>
-      <Picture
-        images={[
-          { imgSrc: logoWEBP, type: "image/webp" },
-          { imgSrc: logoPNG, type: "image/png" },
-        ]}
-      />
+      <picture>
+        <source
+          media="(max-width:500px)"
+          srcSet={smallLogo}
+          type="image/webp"
+        />
+        <source srcSet={logoWEBP} type="image/webp" />
+        <source srcSet={logoPNG} type="image/png" />
+        <img src={smallLogo} alt="" />
+      </picture>
       <nav>
         <ul>
           {navData.map((data, index) => (
@@ -77,27 +81,27 @@ const StyledNav = styled.header`
     color: var(--primary);
 
     li:first-of-type {
-      padding-right: 1em;
+      padding-right: clamp(0.5rem, 1vw, 1rem);
     }
     li:last-of-type {
-      padding-left: 1em;
+      padding-left: clamp(0.5rem, 1vw, 1rem);
     }
 
     li:not(li:first-of-type):not(li:last-of-type) {
-      padding: 0 1em;
+      padding: 0 clamp(0.5rem, 1vw, 1rem);
     }
 
     li {
       display: block;
 
       border-bottom: 1px solid #fff8;
-      padding-bottom: 0.4em;
+      padding-bottom: clamp(0.2rem, 0.7vw, 0.4rem);
       cursor: pointer;
 
       transition: all ease 300ms;
 
       span {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
         transition: transform ease 200ms, color ease 500ms;
       }
 
@@ -116,7 +120,7 @@ const StyledNav = styled.header`
 
   @media only screen and (max-width: 500px) {
     picture {
-      height: 5vh;
+      height: 6vh;
     }
   }
 `

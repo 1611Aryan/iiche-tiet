@@ -1,5 +1,4 @@
 import styled from "@emotion/styled"
-// import atomGIF from "./../Media/Atom/atom.gif"
 
 const Home = () => {
   return (
@@ -90,11 +89,13 @@ const StyledHome = styled.section`
   }
 
   .circle {
+    --size: 25vw;
+
     position: absolute;
     top: 0;
     left: 0;
-    width: 25vw;
-    height: 25vw;
+    width: var(--size);
+    height: var(--size);
     background: rgba(255, 255, 255, 0.2);
     filter: blur(8px);
     border-radius: 50%;
@@ -120,7 +121,7 @@ const StyledHome = styled.section`
     flex-direction: column;
     font-weight: 400;
 
-    font-size: 1.1rem;
+    font-size: clamp(0.6rem, 1.5vw, 1.1rem);
 
     span {
       line-height: 1;
@@ -140,8 +141,6 @@ const StyledHome = styled.section`
   }
 
   svg.atom {
-    //outline: 1px solid black;
-
     width: 30vw;
     overflow: visible;
   }
@@ -188,6 +187,16 @@ const StyledHome = styled.section`
   @keyframes atom {
     to {
       stroke-dashoffset: 129;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    h1 {
+      z-index: 2;
+    }
+
+    svg.atom {
+      display: none;
     }
   }
 `

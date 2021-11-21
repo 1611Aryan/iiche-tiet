@@ -27,7 +27,7 @@ const StyledPolaroid = styled.div`
   flex: 1;
   height: 50%;
   background: #fff;
-  padding: 1em;
+  padding: clamp(0.3rem, 1vw, 1rem);
 
   box-shadow: 5px 5px 8px 2px rgba(0, 0, 0, 0.5);
 
@@ -54,10 +54,18 @@ const StyledPolaroid = styled.div`
     object-fit: cover;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      transform: translate(0%, 0%) rotate(0deg) scale(1.2) !important;
-    }
+  @media only screen and (max-width: 500px) {
+    margin-top: 100%;
+    display: inline-block;
+    width: 60%;
+    height: 30%;
+  }
+  picture {
+    display: block;
+    width: 100%;
+    height: 95%;
+    background: #343434;
+    overflow: hidden;
   }
 `
 

@@ -31,10 +31,10 @@ const StyledLogo = styled.div`
   }
   &:first-of-type,
   &:last-of-type {
-    transform: translateY(5em);
+    transform: translateY(clamp(3rem, 7vw, 7rem));
 
     &:hover {
-      transform: translateY(5em) scale(0.9);
+      transform: translateY(clamp(3rem, 7vw, 7rem)) scale(0.9);
     }
   }
 
@@ -50,6 +50,18 @@ const StyledLogo = styled.div`
   & > :nth-of-type(2) {
     position: relative;
     z-index: 2;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 18%;
+    & > :first-of-type {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(5px) contrast(100%) saturate(120%);
+    }
   }
 `
 

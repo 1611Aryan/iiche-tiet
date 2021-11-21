@@ -55,7 +55,7 @@ const StyledEventLogos = styled.div`
   align-items: center;
 
   > * + * {
-    margin-left: 5em;
+    margin-left: clamp(1.5rem, 7vw, 5rem);
   }
 `
 

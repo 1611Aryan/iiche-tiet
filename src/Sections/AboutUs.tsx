@@ -42,11 +42,10 @@ const AboutUs = () => {
         <p>
           Indian Institute of Chemical Engineers is an organization which was
           established Decades ago to conduct events related to chemical
-          engineering field for chemical engineering undergraduate students,
-          post graduate students and people with related professions.
+          engineering field.
         </p>
         <p>
-          IIChE is one of the most active societies in Thapar University,
+          We are one of the most active societies in Thapar University,
           imparting knowledge about chemistry and technology involved in the
           science of chemistry.
         </p>
@@ -54,9 +53,7 @@ const AboutUs = () => {
           We believe to promote the advancement of chemical engineering science
           and draw up a code of ethics in the profession. We also want to
           maintain and widen our contacts with chemical engineering
-          professionals in India and abroad. We want to act as an authoritative
-          body on matters or training to the teaching and the profession of
-          chemical engineering.
+          professionals in India and abroad.
         </p>
       </div>
     </StyledAboutUs>
@@ -133,7 +130,7 @@ const StyledAboutUs = styled.section`
 
     p {
       font-weight: 400;
-      font-size: 1.2rem;
+      font-size: clamp(0.7rem, 1.2vw, 1.2rem);
       margin-top: 1rem;
     }
   }
@@ -141,6 +138,21 @@ const StyledAboutUs = styled.section`
   .reset {
     transform: translate(0);
     opacity: 1;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 0 var(--padding);
+    .circle {
+      --size: 30vh;
+    }
+
+    picture {
+      width: 30%;
+    }
+    .content {
+      width: 65%;
+      line-height: 1;
+    }
   }
 `
 

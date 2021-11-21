@@ -8,7 +8,7 @@ const Event: React.FC<{
 
 const StyledEvent = styled.section`
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -18,6 +18,8 @@ const StyledEvent = styled.section`
   position: relative;
   color: #fff;
   overflow: hidden;
+
+  padding: 0 var(--padding);
 
   .bg {
     position: absolute;
@@ -47,14 +49,14 @@ const StyledEvent = styled.section`
     position: relative;
     z-index: 2;
     font-family: var(--cursive);
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
   }
   p {
     position: relative;
     z-index: 2;
     margin-top: 2rem;
     width: 60%;
-    font-size: 1.3rem;
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
     text-align: center;
     margin-bottom: 7em;
   }
@@ -71,6 +73,13 @@ const StyledEvent = styled.section`
     justify-content: space-between;
     align-items: flex-end;
 
+    > * {
+      &:hover {
+        transform: rotate(0deg) scale(1.2) !important;
+        z-index: 10;
+      }
+    }
+
     & > *:nth-of-type(1) {
       transform: translateY(20%) rotate(20deg);
     }
@@ -79,6 +88,43 @@ const StyledEvent = styled.section`
     }
     & > *:nth-of-type(3) {
       transform: translateY(15%) rotate(-10deg);
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    p {
+      width: 100%;
+      margin-bottom: 12rem;
+      word-wrap: break-word;
+    }
+
+    .images {
+      display: block;
+
+      & > *:nth-of-type(1) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform-origin: left bottom;
+        transform: translate(-50%, -60%) rotate(40deg);
+      }
+      & > *:nth-of-type(2) {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform-origin: center bottom;
+        transform: translate(-50%, 20%);
+        &:hover {
+          transform: translate(-50%, 0%) scale(1.2) !important;
+        }
+      }
+      & > *:nth-of-type(3) {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform-origin: right bottom;
+        transform: translate(40%, -10%) rotate(-20deg);
+      }
     }
   }
 `

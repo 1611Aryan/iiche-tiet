@@ -9,7 +9,7 @@ const GlobalStyle = () => {
     }
 
     :root {
-      --padding: clamp(1rem, 3vw, 2.5rem);
+      --padding: clamp(1.5rem, 3vw, 2.5rem);
       --primary: #fff;
       --bg: #0d1019;
       --primaryColor: #448a9f;
@@ -31,7 +31,7 @@ const GlobalStyle = () => {
     }
 
     h1 {
-      font-size: 4rem;
+      font-size: clamp(2rem, 5vw, 4rem);
       line-height: 1;
     }
   `

@@ -19,17 +19,15 @@ const Direction = () => {
     <Event>
       <h1>Direction</h1>
       <p>
-        " To learn is to grow with grace, to see is to believe with faith". We
-        at IIChE conducted our much awaited orientation program - DIRECTION on
-        7th November,2020. It was the most awaited feel after school life-
-        stepping in college and making new friends and foes. The main aim of
-        this orientation is to guide and help freshers that what it feels to
-        live a 'college life'. The orientation program was filled with fun and
-        frolic. A plethora of activities and discussions that gave freshers a
-        delightful insight on campus life and aims of the society. By this we
-        welcomed our freshers to the society and as truly said Together we
-        learn, laugh and form bonds . The more energy you put into bonding, the
-        harder is to break !!
+        "To learn is to grow with grace, to see is to believe with faith". We at
+        IIChE conducted our much awaited orientation program - DIRECTION on 7th
+        November,2020. The main aim of this orientation is to guide and help
+        freshers that what it feels to live a 'college life'. The orientation
+        program was filled with fun and frolic. A plethora of activities and
+        discussions that gave freshers a delightful insight on campus life and
+        aims of the society. By this we welcomed our freshers to the society and
+        as truly said Together we learn, laugh and form bonds . The more energy
+        you put into bonding, the harder is to break !!
       </p>
 
       <div className="images">
