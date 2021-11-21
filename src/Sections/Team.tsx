@@ -14,7 +14,7 @@ export const Team = () => {
   const [position, setPosition] = useState(0)
 
   return (
-    <StyledSection>
+    <StyledSection id="team">
       <Picture
         images={[
           { imgSrc: bg_webp, type: "image/webp" },

@@ -7,11 +7,11 @@ const NavBar = () => {
   const navData = [
     {
       name: "ABOUT",
-      link: "aboutUs",
+      link: "about",
     },
     {
       name: "EVENTS",
-      link: "prevEvents",
+      link: "events",
     },
     {
       name: "TEAM",
@@ -23,7 +23,7 @@ const NavBar = () => {
     // },
     {
       name: "CONTACT",
-      link: "contactUs",
+      link: "contact",
     },
   ]
 
@@ -43,7 +43,9 @@ const NavBar = () => {
         <ul>
           {navData.map((data, index) => (
             <li key={index}>
-              <span>{data.name}</span>
+              <a href={`#${data.link}`}>
+                <span>{data.name}</span>
+              </a>
             </li>
           ))}
         </ul>

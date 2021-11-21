@@ -28,7 +28,7 @@ const ContactUs = () => {
   }, [linesRef])
 
   return (
-    <StyledSection ref={linesRef}>
+    <StyledSection ref={linesRef} id="contact">
       <div className="circle one"></div>
       <div className="circle second"></div>
       <header>

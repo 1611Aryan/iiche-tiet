@@ -17,6 +17,11 @@ const GlobalStyle = () => {
       --cursive: "Lobster", cursive;
     }
 
+    html {
+      user-select: none;
+      scroll-behavior: smooth;
+    }
+
     body {
       width: 100vw;
       overflow-x: hidden;

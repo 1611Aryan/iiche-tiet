@@ -22,7 +22,7 @@ const AboutUs = () => {
   }, [logoRef])
 
   return (
-    <StyledAboutUs>
+    <StyledAboutUs id="about">
       <div className="circle"></div>
       <svg viewBox="0 0 604 120" fill="none">
         <path

@@ -14,7 +14,7 @@ SwiperCore.use([Pagination])
 
 const PreviousEvents = () => {
   return (
-    <StyledPreviousEvents>
+    <StyledPreviousEvents id="events">
       <Swiper
         loop={true}
         pagination={{ clickable: true, dynamicBullets: true }}
