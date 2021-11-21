@@ -11,13 +11,13 @@ const AboutUs = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => setVisible(entries[0].isIntersecting),
-      { root: null, threshold: 0.25 }
+      { root: null, threshold: 0.1 }
     )
     logoRef.current && observer.observe(logoRef.current)
 
+    const copy = logoRef.current
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      logoRef.current && observer.unobserve(logoRef.current)
+      observer.unobserve(copy!)
     }
   }, [logoRef])
 
@@ -106,6 +106,7 @@ const StyledAboutUs = styled.section`
   }
 
   picture {
+    will-change: transform;
     position: relative;
     z-index: 2;
     width: 30%;
@@ -120,6 +121,7 @@ const StyledAboutUs = styled.section`
   }
 
   .content {
+    will-change: transform;
     width: 50%;
     position: relative;
     z-index: 2;

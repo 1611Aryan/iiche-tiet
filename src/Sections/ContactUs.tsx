@@ -20,9 +20,10 @@ const ContactUs = () => {
     )
     linesRef.current && observer.observe(linesRef.current)
 
+    const copy = linesRef.current
+
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      linesRef.current && observer.unobserve(linesRef.current)
+      observer.unobserve(copy!)
     }
   }, [linesRef])
 
