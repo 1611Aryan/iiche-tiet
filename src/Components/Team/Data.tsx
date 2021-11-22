@@ -192,7 +192,12 @@ const teamData: member[] = [
     details: {
       name: "Aryan Gupta",
       designation: "Technical Head",
-      info: `It matters not what someone is born, but what they grow to be`,
+      info: `It matters not what someone is born but what they grow to be.
+
+      Imparting Knowledge, learning new things, and helping each other grow, with this vision, I took upon the role of IIChE TIET's Technical Head.
+    
+      
+      `,
     },
     socials: [
       { type: "instagram", link: "https://www.instagram.com/aryyyy_an/?hl=en" },

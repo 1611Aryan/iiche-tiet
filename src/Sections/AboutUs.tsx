@@ -41,8 +41,7 @@ const AboutUs = () => {
         <h1>About Us</h1>
         <p>
           Indian Institute of Chemical Engineers is an organization which was
-          established Decades ago to conduct events related to chemical
-          engineering field.
+          established Decades ago to conduct events related to engineering.
         </p>
         <p>
           We are one of the most active societies in Thapar University,

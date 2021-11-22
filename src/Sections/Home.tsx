@@ -12,6 +12,8 @@ const Home = () => {
         <span className="line4">CHAPTER</span>
       </h1>
 
+    
+
       <svg className="atom" viewBox="0 0 100 100">
         <defs>
           <filter id="blur" x="-10" y="-10" width="120" height="120">
@@ -139,6 +141,8 @@ const StyledHome = styled.section`
       font-size: 4.5em;
     }
   }
+
+
 
   svg.atom {
     width: 30vw;
