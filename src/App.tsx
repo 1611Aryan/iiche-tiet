@@ -1,13 +1,13 @@
-import NavBar from "./Components/NavBar"
-import PreviousEvents from "./Sections/PreviousEvents"
-import Main from "./Sections/Main"
-import Team from "./Sections/Team"
-import ContactUs from "./Sections/ContactUs"
 import Loader from "./Components/Loader"
 import { useEffect, useState } from "react"
 
+import { useRoutes } from "react-router-dom"
+import Routes from "Routes"
+
 const App = () => {
   const [loading, setLoading] = useState(true)
+
+  const router = useRoutes(Routes)
 
   useEffect(() => {
     window.addEventListener("load", () =>
@@ -24,11 +24,7 @@ const App = () => {
   return (
     <div className="App">
       {loading && <Loader />}
-      <NavBar />
-      <Main />
-      <PreviousEvents />
-      <Team />
-      <ContactUs />
+      {router}
     </div>
   )
 }

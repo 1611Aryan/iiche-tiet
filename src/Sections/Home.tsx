@@ -1,8 +1,10 @@
 import styled from "@emotion/styled"
+import NavBar from "../Components/NavBar"
 
 const Home = () => {
   return (
     <StyledHome>
+      <NavBar />
       <div className="circle"></div>
       <div className="triangle"></div>
       <h1>
@@ -11,8 +13,6 @@ const Home = () => {
         <span className="line3">STUDENT</span>
         <span className="line4">CHAPTER</span>
       </h1>
-
-    
 
       <svg className="atom" viewBox="0 0 100 100">
         <defs>
@@ -141,8 +141,6 @@ const StyledHome = styled.section`
       font-size: 4.5em;
     }
   }
-
-
 
   svg.atom {
     width: 30vw;

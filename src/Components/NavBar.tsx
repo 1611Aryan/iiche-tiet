@@ -1,7 +1,6 @@
 import styled from "@emotion/styled"
-import smallLogo from "./../Media/Logo/Logo.webp"
-import logoPNG from "./../Media/Logo/logoWhite.png"
-import logoWEBP from "./../Media/Logo/logoWhite.webp"
+
+import Logo from "./Common/Logo"
 
 const NavBar = () => {
   const navData = [
@@ -29,16 +28,7 @@ const NavBar = () => {
 
   return (
     <StyledNav>
-      <picture>
-        <source
-          media="(max-width:500px)"
-          srcSet={smallLogo}
-          type="image/webp"
-        />
-        <source srcSet={logoWEBP} type="image/webp" />
-        <source srcSet={logoPNG} type="image/png" />
-        <img src={smallLogo} alt="" />
-      </picture>
+      <Logo />
       <nav>
         <ul>
           {navData.map((data, index) => (
@@ -65,17 +55,7 @@ const StyledNav = styled.header`
   align-items: center;
   z-index: 5;
   overflow: hidden;
-
-  picture {
-    height: 10vh;
-    width: auto;
-    img {
-      height: 100%;
-      width: auto;
-      object-fit: cover;
-      display: block;
-    }
-  }
+  will-change: transform;
 
   ul {
     list-style-type: none;
@@ -103,7 +83,7 @@ const StyledNav = styled.header`
       transition: all ease 300ms;
 
       span {
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
+        font-size: clamp(0.8rem, 2vw, 1.1rem);
         transition: transform ease 200ms, color ease 500ms;
       }
 
@@ -117,12 +97,6 @@ const StyledNav = styled.header`
           border-bottom-color: #fbff00;
         }
       }
-    }
-  }
-
-  @media only screen and (max-width: 500px) {
-    picture {
-      height: 6vh;
     }
   }
 `

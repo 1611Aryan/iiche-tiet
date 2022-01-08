@@ -35,9 +35,25 @@ const GlobalStyle = () => {
       color: inherit;
     }
 
+    button,
+    input {
+      border: 0;
+      &:hover,
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      cursor: pointer;
+    }
+
     h1 {
       font-size: clamp(2rem, 5vw, 4rem);
       line-height: 1;
+    }
+
+    ul {
+      list-style-type: none;
     }
   `
 
