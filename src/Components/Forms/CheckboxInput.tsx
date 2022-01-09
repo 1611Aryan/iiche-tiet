@@ -9,10 +9,7 @@ const CheckboxInput: React.FC<{
       [key: string]: string | string[]
     }>
   >
-  input: {
-    [key: string]: string | string[]
-  }
-}> = ({ question, setInput, input }) => {
+}> = ({ question, setInput }) => {
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked)
       setInput(input => ({

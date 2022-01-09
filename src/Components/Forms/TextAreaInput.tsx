@@ -23,7 +23,7 @@ const TextAreaInput: React.FC<{
         onChange={changeHandler}
         value={input[question.name]}
         name={question.name}
-        required
+        required={question.required}
       />
     </InputBaseStyle>
   )

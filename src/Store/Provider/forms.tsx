@@ -1,18 +1,27 @@
+import GetFormById from "API/GetFormById"
+import GetForms from "API/GetForms"
 import React, { useContext, createContext, useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-export type form = {
-  name: string
+export type formData = {
+  formName: string
   active: boolean
   questions: question[]
   _id: string
 }
 
-type forms = {
-  forms: form[]
-  formNames: string[]
-  getFormByName: (formName: string) => void | form
+type form = { formName: string; _id: string }
+
+export type forms = {
+  forms: form[] | undefined
+  getFormByName: (formName: string) => Promise<void | formData>
 }
+
+// type forms = {
+//   forms: form[]
+//   formNames: string[]
+//   getFormByName: (formName: string) => void | form
+// }
 
 export type question = {
   question: string
@@ -31,8 +40,8 @@ export type question = {
 
 const FormsContext = createContext<forms>({
   forms: [],
-  formNames: [],
-  getFormByName: () => ({ _id: "", name: "", active: false, questions: [] }),
+
+  getFormByName: async () => {},
 })
 
 export const useForms = () => useContext(FormsContext)
@@ -40,128 +49,25 @@ export const useForms = () => useContext(FormsContext)
 export const FormsProvider: React.FC<{
   children: JSX.Element | JSX.Element[]
 }> = ({ children }) => {
-  const [forms] = useState([
-    {
-      name: "Recruitments",
-      active: true,
-      _id: "",
-      questions: [
-        {
-          question: "Your Name",
-          responseType: "String",
-          name: "name",
-          required: true,
-        },
-        {
-          question: "Email",
-          responseType: "Email",
-          name: "email",
-          required: true,
-        },
-        {
-          question: "Roll No.",
-          responseType: "Number",
-          name: "rollNumber",
-          required: true,
-        },
-        {
-          question: "Your Branch",
-          responseType: "String",
-          name: "branch",
-          required: true,
-        },
-        {
-          question: "Year of Study",
-          responseType: "String",
-          name: "year",
-          required: true,
-        },
-        {
-          question: "Department of Interest",
-          responseType: "Checkbox",
-          name: "department",
-          options: [
-            "Technical",
-            "Content",
-            "Designing",
-            "Marketing and PR",
-            "Engagement",
-          ],
-          required: true,
-        },
-
-        {
-          question: "Whatsapp no.",
-          responseType: "Phone",
-          name: "phone",
-          required: true,
-        },
-        {
-          question:
-            "Mention the skills you possess? How well you know about it?",
-          responseType: "Text",
-          name: "skills",
-          required: false,
-        },
-        {
-          question: "Attach your work, if any?",
-          responseType: "Text",
-          name: "work",
-          required: true,
-        },
-        {
-          question: "What are your expectations from IICHE?",
-          responseType: "Text",
-          name: "expectations",
-          required: true,
-        },
-        {
-          question:
-            "If you had a choice between two superpowers, being invisible or flying, Which will you choose and why?",
-          responseType: "Text",
-          name: "superpowers",
-          required: true,
-        },
-        {
-          question:
-            "Is it better to do work that's perfect but late, or average but on time?",
-          responseType: "Text",
-          name: "work_ethic",
-          required: true,
-        },
-        {
-          question: "What is an unpopular opinion you hold?",
-          responseType: "Text",
-
-          name: "opinion",
-
-          required: true,
-        },
-        {
-          question: "Any suggestion or ideas for us?",
-          responseType: "Text",
-          name: "suggestion",
-          required: false,
-        },
-      ],
-    },
-  ])
-
-  const [formNames, setFormNames] = useState<forms["formNames"]>([])
+  const [forms, setForms] = useState<form[]>([])
 
   useEffect(() => {
-    setFormNames(() => forms.map(form => form.name))
-  }, [forms])
-
+    ;(async () => {
+      const res = await GetForms()
+      setForms(res || [])
+    })()
+  }, [])
   const navigate = useNavigate()
 
-  const getFormByName = (formName: string) => {
-    const form = forms.filter(form => form.name === formName)[0]
-    return form ? form : navigate("forms")
+  const getFormByName = async (formName: string) => {
+    const form = forms.filter(form => form.formName === formName)[0]
+    if (!form) return navigate("forms")
+    const formData = await GetFormById(form._id)
+    return formData ? formData : navigate("forms")
   }
 
   return (
-    <FormsContext.Provider value={{ forms, formNames, getFormByName }}>
+    <FormsContext.Provider value={{ forms, getFormByName }}>
       {children}
     </FormsContext.Provider>
   )

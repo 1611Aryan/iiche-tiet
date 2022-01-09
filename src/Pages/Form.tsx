@@ -1,20 +1,36 @@
 import styled from "@emotion/styled"
 import Header from "Components/Common/Header"
 import StringInput from "Components/Forms/StringInput"
-import { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useParams } from "react-router-dom"
-import { form, useForms } from "Store/Provider/forms"
+import { formData, useForms } from "Store/Provider/forms"
 import FormBg from "Media/Form/formBg.jpg"
 import TextAreaInput from "Components/Forms/TextAreaInput"
 import FormLoader from "Components/Forms/Loader"
 import CheckboxInput from "Components/Forms/CheckboxInput"
+import SubmitResponse from "API/SubmitResponse"
+import Success from "Components/Forms/Success"
 
 const Form = () => {
+  const ref = useRef<HTMLDivElement>(null)
+  const [success, setSuccess] = useState(false)
   const { formName } = useParams()
   const { getFormByName } = useForms()
-  const [selected, setSelected] = useState<form>()
-  const [input, setInput] = useState<{ [key: string]: string | string[] }>(
-    () => {
+  const [selected, setSelected] = useState<formData>()
+  const [loading, setLoading] = useState(false)
+  const [input, setInput] = useState<{ [key: string]: string | string[] }>({})
+  const [error, setError] = useState("")
+
+  useEffect(() => {
+    ;(async () => {
+      const form = await getFormByName(formName || "")
+
+      form && setSelected(form)
+    })()
+  }, [formName, getFormByName])
+
+  useEffect(() => {
+    setInput(() => {
       let temp = {}
       selected?.questions.forEach(question => {
         temp = {
@@ -23,30 +39,40 @@ const Form = () => {
         }
       })
       return temp
-    }
-  )
+    })
+  }, [selected])
 
   useEffect(() => {
-    const form = getFormByName(formName || "")
-    form && setSelected(form)
-  }, [formName, getFormByName])
+    if (error) ref.current?.scrollTo(0, 0)
+  }, [error])
+
+  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    setError("")
+    e.preventDefault()
+    setLoading(true)
+    const res = await SubmitResponse(input, selected?._id || "", setError)
+    if (res) setSuccess(true)
+    setLoading(false)
+  }
 
   return (
     <StyledForm>
-      {false && <FormLoader />}
+      {loading && <FormLoader />}
+      {success && <Success />}
       <img src={FormBg} alt="" className="bg" />
 
       <section>
         <div className="left">
           <Header />
           <div className="formName">
-            <h1>{selected?.name}</h1>
+            <h1>{selected?.formName}</h1>
           </div>
         </div>
 
-        <div className="right">
+        <div className="right" ref={ref}>
           <div className="right_bg"></div>
-          <form>
+          <form onSubmit={submitHandler}>
+            <p className="error">{error}</p>
             {selected?.questions.map((question, index) => {
               if (
                 question.responseType === "String" ||
@@ -75,7 +101,6 @@ const Form = () => {
                 return (
                   <CheckboxInput
                     key={index}
-                    input={input}
                     setInput={setInput}
                     question={question}
                   />
@@ -160,6 +185,11 @@ const StyledForm = styled.main`
       align-items: flex-start;
       flex-direction: column;
       gap: clamp(2rem, 5vw, 4rem);
+
+      .error {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: red;
+      }
 
       button {
         align-self: flex-end;

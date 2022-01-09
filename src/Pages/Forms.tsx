@@ -12,8 +12,8 @@ const Forms = () => {
       <Header />
       <h1>All Forms</h1>
       <ul>
-        {forms.map((form, index) => (
-          <ThumbnailForm key={index} formName={form.name} />
+        {forms?.map((form, index) => (
+          <ThumbnailForm key={index} formName={form.formName} />
         ))}
       </ul>
     </StyledForms>
