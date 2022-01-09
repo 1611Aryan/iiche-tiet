@@ -13,7 +13,7 @@ enum Method {
 const baseUrl =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:5000"
-    : "https://iiche-forms-api.herokuapp.com/"
+    : "https://iiche-forms-api.herokuapp.com"
 
 export const getForms: Endpoint = {
   url: `${baseUrl}`,
