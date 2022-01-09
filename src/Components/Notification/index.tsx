@@ -22,7 +22,7 @@ const StyledNotifcation = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem var(--padding);
+  padding: clamp(0.5rem, 1.5vw, 1rem) var(--padding);
   background: var(--bg);
   display: flex;
   justify-content: space-between;

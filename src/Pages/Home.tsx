@@ -9,10 +9,7 @@ const Home = () => {
 
   return (
     <>
-      {process.env.NODE_ENV === "development" && (
-        <Notification notification={notification} />
-      )}
-
+      <Notification notification={notification} />
       <Main />
       <PreviousEvents />
       <Team />

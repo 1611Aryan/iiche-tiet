@@ -36,7 +36,8 @@ const GlobalStyle = () => {
     }
 
     button,
-    input {
+    input,
+    textarea {
       border: 0;
       &:hover,
       &:focus {

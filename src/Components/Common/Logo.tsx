@@ -24,14 +24,14 @@ const Logo = () => (
 
 const StyledLogo = styled.picture`
   width: auto;
-  height: 10vh;
+  height: 8vh;
 
   a {
     width: auto;
-    height: 10vh;
+    height: 8vh;
   }
   picture {
-    height: 10vh;
+    height: 8vh;
     width: auto;
     img {
       height: 100%;

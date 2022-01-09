@@ -13,7 +13,7 @@ const Forms = () => {
       <h1>All Forms</h1>
       <ul>
         {forms.map((form, index) => (
-          <ThumbnailForm index={index} formName={form.name} />
+          <ThumbnailForm key={index} formName={form.name} />
         ))}
       </ul>
     </StyledForms>
@@ -39,7 +39,7 @@ const StyledForms = styled.main`
 
     align-items: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: clamp(1.5rem, 4vw, 3rem);
   }
 `
 

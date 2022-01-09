@@ -55,7 +55,6 @@ const StyledNav = styled.header`
   align-items: center;
   z-index: 5;
   overflow: hidden;
-  will-change: transform;
 
   ul {
     list-style-type: none;

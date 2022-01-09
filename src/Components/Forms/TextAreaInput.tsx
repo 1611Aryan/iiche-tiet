@@ -1,8 +1,7 @@
-import React from "react"
 import { question } from "Store/Provider/forms"
 import InputBaseStyle from "./Style"
 
-const StringInput: React.FC<{
+const TextAreaInput: React.FC<{
   question: question
   setInput: React.Dispatch<
     React.SetStateAction<{
@@ -13,22 +12,21 @@ const StringInput: React.FC<{
     [key: string]: string | string[]
   }
 }> = ({ question, setInput, input }) => {
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const changeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
     setInput(input => ({ ...input, [question.name]: e.target.value }))
 
   return (
     <InputBaseStyle>
       <label htmlFor={question.name}>{question.question}</label>
 
-      <input
+      <textarea
         onChange={changeHandler}
         value={input[question.name]}
         name={question.name}
         required
-        type="text"
       />
     </InputBaseStyle>
   )
 }
 
-export default StringInput
+export default TextAreaInput

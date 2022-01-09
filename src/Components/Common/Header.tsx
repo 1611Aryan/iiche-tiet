@@ -11,9 +11,12 @@ const Header = () => {
 
 const StyledHeader = styled.header`
   width: 100%;
-  padding: 1.5rem var(--padding);
+  padding: 1.25rem var(--padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
 `
 export default Header
