@@ -17,6 +17,7 @@ const InputBaseStyle = styled.div`
     font-size: clamp(1.15rem, 2vw, 1.55rem);
     color: #fff;
     cursor: pointer;
+    white-space: pre-line;
   }
 
   input,
