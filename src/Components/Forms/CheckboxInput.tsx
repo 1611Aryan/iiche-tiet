@@ -1,3 +1,4 @@
+import parse from "html-react-parser"
 import React from "react"
 import { question } from "Store/Provider/forms"
 import InputBaseStyle from "./Style"
@@ -10,6 +11,7 @@ const CheckboxInput: React.FC<{
     }>
   >
 }> = ({ question, setInput }) => {
+  console.log(question)
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked)
       setInput(input => ({
@@ -29,7 +31,7 @@ const CheckboxInput: React.FC<{
   return (
     <InputBaseStyle>
       <label htmlFor="department" className="label__header">
-        Department of Choice
+        {parse(question.question)}
       </label>
 
       {question.options?.map((option, index) => (

@@ -1,4 +1,5 @@
 import React from "react"
+import parse from "html-react-parser"
 import { question } from "Store/Provider/forms"
 import InputBaseStyle from "./Style"
 
@@ -18,7 +19,7 @@ const StringInput: React.FC<{
 
   return (
     <InputBaseStyle>
-      <label htmlFor={question.name}>{question.question}</label>
+      <label htmlFor={question.name}>{parse(question.question)}</label>
 
       <input
         onChange={changeHandler}

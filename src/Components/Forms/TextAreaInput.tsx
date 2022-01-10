@@ -1,4 +1,6 @@
 import { question } from "Store/Provider/forms"
+import parse from "html-react-parser"
+
 import InputBaseStyle from "./Style"
 
 const TextAreaInput: React.FC<{
@@ -17,7 +19,7 @@ const TextAreaInput: React.FC<{
 
   return (
     <InputBaseStyle>
-      <label htmlFor={question.name}>{question.question}</label>
+      <label htmlFor={question.name}>{parse(question.question)}</label>
 
       <textarea
         onChange={changeHandler}
