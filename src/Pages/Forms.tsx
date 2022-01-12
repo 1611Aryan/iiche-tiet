@@ -1,11 +1,16 @@
 import styled from "@emotion/styled"
 import Header from "Components/Common/Header"
 import ThumbnailForm from "Components/Forms/ThumbnailForm"
+import { useEffect } from "react"
 
 import { useForms } from "Store/Provider/forms"
 
 const Forms = () => {
   const { forms } = useForms()
+
+  useEffect(() => {
+    document.title = "IIChE TIET ● Forms"
+  }, [])
 
   return (
     <StyledForms>

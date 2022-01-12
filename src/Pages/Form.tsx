@@ -46,6 +46,10 @@ const Form = () => {
     if (error) ref.current?.scrollTo(0, 0)
   }, [error])
 
+  useEffect(() => {
+    document.title = `IIChE TIET ● ${selected?.formName}`
+  }, [selected])
+
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     setError("")
     e.preventDefault()
@@ -167,14 +171,7 @@ const StyledForm = styled.main`
 
     overflow: hidden auto;
 
-    .right_bg {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 60vw;
-      background: #0008;
-    }
+    background: #0008;
 
     form {
       position: relative;
