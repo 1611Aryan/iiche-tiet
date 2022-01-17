@@ -1,10 +1,11 @@
 import axios from "axios"
+import { form } from "Store/Provider/forms"
 import { getForms } from "./Endpoints"
 
 const GetForms = async () => {
   try {
     const res = await axios[getForms.method]<{
-      forms: { formName: string; _id: string }[]
+      forms: form[]
     }>(getForms.url)
 
     return res.data.forms

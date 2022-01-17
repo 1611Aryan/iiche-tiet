@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <>
-      <Notification notification={notification} />
+      {notification && <Notification notification={notification} />}
       <Main />
       <PreviousEvents />
       <Team />

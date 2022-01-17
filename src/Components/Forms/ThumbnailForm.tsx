@@ -1,22 +1,31 @@
 import styled from "@emotion/styled"
 import { IoMdSend } from "react-icons/io"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import formIcon from "Media/Form/formIcon.png"
+import { form } from "Store/Provider/forms"
 
-const ThumbnailForm: React.FC<{ formName: string }> = ({ formName }) => {
+const ThumbnailForm: React.FC<{ form: form }> = ({ form }) => {
+  const navigate = useNavigate()
+
+  const clickHandler = () => {
+    if (form.active) return navigate(`/forms/${form.formName}`)
+    return window.alert("Form has been closed.")
+  }
+
   return (
-    <Link to={`/forms/${formName}`}>
-      <StyledThumbnail>
-        <div>
-          <img src={formIcon} alt="formIcon" />
-        </div>
-        <button>
-          <span> {formName}</span>
-          &nbsp;
-          <IoMdSend />
-        </button>
-      </StyledThumbnail>
-    </Link>
+    <StyledThumbnail
+      onClick={clickHandler}
+      className={!form.active ? "inactive" : ""}
+    >
+      <div>
+        <img src={formIcon} alt="formIcon" />
+      </div>
+      <button>
+        <span> {form.formName}</span>
+        &nbsp;
+        <IoMdSend />
+      </button>
+    </StyledThumbnail>
   )
 }
 
@@ -24,6 +33,9 @@ const StyledThumbnail = styled.li`
   width: 18vw;
   aspect-ratio: 1 / 1;
   background: var(--primaryColor);
+
+  position: relative;
+
   display: flex;
   justify-content: space-between;
   flex-direction: column;

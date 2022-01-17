@@ -18,7 +18,7 @@ const Forms = () => {
       <h1>All Forms</h1>
       <ul>
         {forms?.map((form, index) => (
-          <ThumbnailForm key={index} formName={form.formName} />
+          <ThumbnailForm key={index} form={form} />
         ))}
       </ul>
     </StyledForms>
@@ -45,6 +45,18 @@ const StyledForms = styled.main`
     align-items: center;
     flex-wrap: wrap;
     gap: clamp(1.5rem, 4vw, 3rem);
+
+    .inactive {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000a;
+      }
+    }
   }
 `
 

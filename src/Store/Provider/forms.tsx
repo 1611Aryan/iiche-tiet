@@ -10,7 +10,11 @@ export type formData = {
   _id: string
 }
 
-type form = { formName: string; _id: string }
+export type form = {
+  formName: formData["formName"]
+  _id: formData["_id"]
+  active: formData["active"]
+}
 
 export type forms = {
   forms: form[] | undefined
