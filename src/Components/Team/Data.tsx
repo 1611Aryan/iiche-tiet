@@ -7,6 +7,9 @@ import anushka_jpg from "./../../Media/Team/anushka.jpg"
 import lokeshwar_webp from "./../../Media/Team/lokeshwar.webp"
 import lokeshwar_jpg from "./../../Media/Team/lokeshwar.jpg"
 
+import shivam_webp from "./../../Media/Team/shivam.webp"
+import shivam_jpg from "./../../Media/Team/shivam.jpg"
+
 import avantika_webp from "./../../Media/Team/avantika.webp"
 import avantika_jpg from "./../../Media/Team/avantika.jpg"
 
@@ -30,12 +33,18 @@ export type member = {
   }
   images: {
     imgSrc: string
-    type: string
+    type: "image/webp" | "image/jpg"
   }[]
   socials: {
     type: "instagram" | "facebook" | "linkedin" | "twitter"
     link: string
   }[]
+}
+
+export type coreMember = {
+  name: string
+  image: string
+  linkedin: string
 }
 
 const teamData: member[] = [
@@ -56,6 +65,10 @@ const teamData: member[] = [
         link: "https://www.instagram.com/parthsood.__/?hl=en",
       },
       { type: "facebook", link: "https://www.facebook.com/parthsood.12.11.01" },
+      {
+        type: "linkedin",
+        link: "https://www.linkedin.com/in/parthsood/",
+      },
     ],
   },
   {
@@ -71,7 +84,20 @@ const teamData: member[] = [
       designation: "General Secretary",
       info: "In the end it's all about perfection.",
     },
-    socials: [],
+    socials: [
+      {
+        type: "instagram",
+        link: "https://www.instagram.com/anushka.khera",
+      },
+      {
+        type: "facebook",
+        link: "https://www.facebook.com/anushka.khera.7",
+      },
+      {
+        type: "linkedin",
+        link: "https://www.linkedin.com/in/anushka-khera-b605aa195/",
+      },
+    ],
   },
   {
     images: [
@@ -86,7 +112,46 @@ const teamData: member[] = [
       designation: "Joint Secretary",
       info: "I personally believe that leaders are not made in a day, they are made under circumstances which reveal thier true personality. IIChE tiet is visionary society with a aim to take technical knowledge as well as engineering concepts of the participants into a fun and interacting level",
     },
-    socials: [],
+    socials: [
+      { type: "instagram", link: "https://www.instagram.com/lokeshwarpuri" },
+
+      {
+        type: "facebook",
+        link: "https://www.facebook.com/lokeshwar.puri",
+      },
+      {
+        type: "linkedin",
+        link: "https://www.linkedin.com/in/lokeshwar-puri-b58ba3218/",
+      },
+    ],
+  },
+  {
+    images: [
+      { imgSrc: shivam_webp, type: "image/webp" },
+      {
+        imgSrc: shivam_jpg,
+        type: "image/jpg",
+      },
+    ],
+    details: {
+      name: "Shivam Dwivedi",
+      designation: "Marketing Head",
+      info: "Exploring and understanding people around you is the most interesting task you will ever find. With same thought process, I would like to drive the growth of IIChE tiet through innovative and creative marketing strategies and will always be ready to help you guys with any matter😉",
+    },
+    socials: [
+      {
+        type: "linkedin",
+        link: "https://www.linkedin.com/in/shivam-dwivedi-4547261b6",
+      },
+      {
+        type: "instagram",
+        link: "https://www.instagram.com/shivam_dv/",
+      },
+      {
+        type: "facebook",
+        link: "https://m.facebook.com/100002084755876/",
+      },
+    ],
   },
   {
     images: [
@@ -179,7 +244,20 @@ const teamData: member[] = [
       designation: "Engagement Head",
       info: `I am a very curious being who is always eager to explore new boundaries. I have a creative touch in me and I always try to be solution oriented. Being the Engagement head for this term, I aim to increase the brand presence of IIChE as well as increase the engagement within the chapter.`,
     },
-    socials: [],
+    socials: [
+      {
+        type: "instagram",
+        link: "https://www.instagram.com/jas_karan_sss",
+      },
+      {
+        type: "facebook",
+        link: "https://www.facebook.com/jaskaran.singhubhi.10",
+      },
+      {
+        type: "linkedin",
+        link: "https://www.linkedin.com/in/jaskaran-singh-ubhi-b45ab4209/",
+      },
+    ],
   },
   {
     images: [
@@ -195,8 +273,7 @@ const teamData: member[] = [
       info: `It matters not what someone is born but what they grow to be.
 
       Imparting Knowledge, learning new things, and helping each other grow, with this vision, I took upon the role of IIChE TIET's Technical Head.
-    
-      
+         
       `,
     },
     socials: [
@@ -209,5 +286,7 @@ const teamData: member[] = [
     ],
   },
 ]
+
+export const coreMemberData = new Array(23).fill({})
 
 export default teamData.reverse()

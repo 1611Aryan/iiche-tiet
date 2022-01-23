@@ -7,11 +7,14 @@ import CoverPage from "../Components/Team/CoverPage"
 import bg_webp from "./../Media/Team/teamBg.webp"
 import bg_jpg from "./../Media/Team/teamBg.jpg"
 
-import TeamData from "./../Components/Team/Data"
+import TeamData, { coreMemberData } from "./../Components/Team/Data"
 import Page from "./../Components/Team/Page"
+import CoreMemberPage from "Components/Team/CoreMemberPage"
 
 export const Team = () => {
   const [position, setPosition] = useState(0)
+
+  const numOfPages = TeamData.length + coreMemberData.length
 
   return (
     <StyledSection id="team">
@@ -30,10 +33,19 @@ export const Team = () => {
             position={position}
             setPosition={setPosition}
             member={member}
-            numOfPages={TeamData.length}
+            numOfPages={numOfPages}
             key={index}
           />
         ))}
+        {/* {coreMemberData.map((_member, index) => (
+          <CoreMemberPage
+            index={TeamData.length + coreMemberData.length - index}
+            position={position}
+            setPosition={setPosition}
+            numOfPages={numOfPages}
+            key={index}
+          />
+        ))} */}
         <CoverPage position={position} setPosition={setPosition} />
       </StyledBook>
     </StyledSection>

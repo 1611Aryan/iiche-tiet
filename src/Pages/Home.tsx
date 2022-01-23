@@ -6,7 +6,8 @@ import Notification from "Components/Notification"
 import { useEffect } from "react"
 
 const Home = () => {
-  const notification = { message: "Recruitments now Live✨✨", link: "forms" }
+  // const notification = { message: "Recruitments now Live✨✨", link: "forms" }
+  const notification = null
 
   useEffect(() => {
     document.title = `IIChE TIET`
