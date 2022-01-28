@@ -8,10 +8,10 @@ import {
   IoLogoTwitter,
 } from "react-icons/io5"
 import Picture from "../Picture"
-import { member } from "./Data"
+import { EB_Member } from "./Data"
 
-const Page: React.FC<{
-  member: member
+const EB_PAGE: React.FC<{
+  member: EB_Member
   index: number
   position: number
   setPosition: React.Dispatch<React.SetStateAction<number>>
@@ -110,10 +110,7 @@ const StyledPage = styled.div`
   transition: transform ease 500ms;
   .back {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: #172e35;
     border-radius: 10px 0px 0px 10px;
 
@@ -122,10 +119,7 @@ const StyledPage = styled.div`
   }
   .front {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     border-radius: 0 10px 10px 0;
     overflow: hidden;
 
@@ -140,16 +134,14 @@ const StyledPage = styled.div`
 
     .bg {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       opacity: 0.5;
       filter: blur(5px) contrast(60%);
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: scale(1.1);
       }
     }
 
@@ -282,4 +274,4 @@ const StyledPage = styled.div`
     }
   }
 `
-export default Page
+export default EB_PAGE

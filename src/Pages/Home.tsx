@@ -4,6 +4,7 @@ import Team from "Sections/Team"
 import ContactUs from "Sections/ContactUs"
 import Notification from "Components/Notification"
 import { useEffect } from "react"
+import DesignedBy from "Sections/DesignedBy"
 
 const Home = () => {
   // const notification = { message: "Recruitments now Live✨✨", link: "forms" }
@@ -20,6 +21,7 @@ const Home = () => {
       <PreviousEvents />
       <Team />
       <ContactUs />
+      <DesignedBy />
     </>
   )
 }

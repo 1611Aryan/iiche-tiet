@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styled from "@emotion/styled"
 
 import Picture from "../Components/Picture"
@@ -7,14 +7,18 @@ import CoverPage from "../Components/Team/CoverPage"
 import bg_webp from "./../Media/Team/teamBg.webp"
 import bg_jpg from "./../Media/Team/teamBg.jpg"
 
-import TeamData, { coreMemberData } from "./../Components/Team/Data"
-import Page from "./../Components/Team/Page"
+import EB_TeamData, {
+  CoreMemberData,
+  num_of_members,
+} from "./../Components/Team/Data"
+import EB_PAGE from "./../Components/Team/Page"
 import CoreMemberPage from "Components/Team/CoreMemberPage"
+import CoreMemberHeading from "Components/Team/CoreMemberHeading"
 
 export const Team = () => {
-  const [position, setPosition] = useState(0)
+  const [position, setPosition] = useState(10)
 
-  const numOfPages = TeamData.length + coreMemberData.length
+  useEffect(() => console.log(position, num_of_members), [position])
 
   return (
     <StyledSection id="team">
@@ -27,25 +31,36 @@ export const Team = () => {
       />
       <div className="overlay"></div>
       <StyledBook>
-        {TeamData.map((member, index) => (
-          <Page
-            index={TeamData.length - index}
+        {Array(num_of_members - EB_TeamData.length)
+          .fill({})
+          .map((_, index) => (
+            <CoreMemberPage
+              index={num_of_members + 1 - index}
+              position={position}
+              setPosition={setPosition}
+              numOfPages={num_of_members + 1}
+              member1={CoreMemberData[index]}
+              member2={CoreMemberData[index + 1]}
+              key={index}
+            />
+          ))}
+        <CoreMemberHeading
+          index={EB_TeamData.length + 1}
+          position={position}
+          setPosition={setPosition}
+          numOfPages={num_of_members + 1}
+        />
+        {EB_TeamData.map((member, index) => (
+          <EB_PAGE
+            index={EB_TeamData.length - index}
             position={position}
             setPosition={setPosition}
             member={member}
-            numOfPages={numOfPages}
+            numOfPages={num_of_members + 1}
             key={index}
           />
         ))}
-        {/* {coreMemberData.map((_member, index) => (
-          <CoreMemberPage
-            index={TeamData.length + coreMemberData.length - index}
-            position={position}
-            setPosition={setPosition}
-            numOfPages={numOfPages}
-            key={index}
-          />
-        ))} */}
+
         <CoverPage position={position} setPosition={setPosition} />
       </StyledBook>
     </StyledSection>

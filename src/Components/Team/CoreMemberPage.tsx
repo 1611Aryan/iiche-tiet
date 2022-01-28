@@ -1,12 +1,15 @@
 import styled from "@emotion/styled"
-import { IoArrowRedo, IoArrowUndo } from "react-icons/io5"
+import { coreMember } from "./Data"
+import { IoArrowRedo, IoArrowUndo, IoLogoLinkedin } from "react-icons/io5"
 
 const CoreMemberPage: React.FC<{
   index: number
   position: number
   setPosition: React.Dispatch<React.SetStateAction<number>>
   numOfPages: number
-}> = ({ index, setPosition, position, numOfPages }) => {
+  member1: coreMember
+  member2: coreMember
+}> = ({ index, setPosition, position, numOfPages, member2, member1 }) => {
   const nextPage = () => {
     if (position === numOfPages) return
     setPosition(position => index + 1)
@@ -19,16 +22,52 @@ const CoreMemberPage: React.FC<{
   return (
     <StyledPage className={position > index ? "turn" : ""}>
       <div className="front">
-        <div className="row">
-          <div className="one column">
-            <div className="content"></div>
-          </div>
-          <div className="column">
-            <div className="info"></div>
-            <div className="logos"></div>
-          </div>
+        <div className="bg">
+          <img
+            src="https://images.pexels.com/photos/3293037/pexels-photo-3293037.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt=""
+          />
         </div>
         <div className="row">
+          <div className="photo">
+            <img src={member1.image} alt="" />
+          </div>
+          <div className="info">
+            <a target="_blank" href={member1.linkedin} rel="noreferrer">
+              <h4>{member1.name}</h4>
+            </a>
+            <p>{member1.description}</p>
+            <a
+              className="linkedin"
+              target="_blank"
+              href={member1.linkedin}
+              rel="noreferrer"
+            >
+              <IoLogoLinkedin />
+            </a>
+          </div>
+        </div>
+        <div className="row  inverted">
+          <div className="photo">
+            <img src={member2.image} alt="" />
+          </div>
+          <div className="info">
+            <a href={member2.linkedin} target="_blank" rel="noreferrer">
+              <h4>{member2.name}</h4>
+            </a>
+            <p>{member2.description}</p>
+            <a
+              className="linkedin"
+              target="_blank"
+              href={member2.linkedin}
+              rel="noreferrer"
+            >
+              <IoLogoLinkedin />
+            </a>
+          </div>
+        </div>
+
+        <div className="navigation">
           <IoArrowUndo className="button" onClick={prevPage} />
           {numOfPages !== index && (
             <IoArrowRedo className="button" onClick={nextPage} />
@@ -65,57 +104,55 @@ const StyledPage = styled.div`
   }
   .front {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     border-radius: 0 10px 10px 0;
     overflow: hidden;
-
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
 
     background: var(--primaryColor);
     border-left: 2px dashed #fff8;
 
     padding: clamp(1rem, 3vw, 2rem);
 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
     .bg {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.5;
-      filter: blur(5px) contrast(60%);
+      inset: 0;
+      filter: blur(5px) contrast(70%);
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: scale(1.2);
       }
     }
 
     .row {
-      z-index: 2;
+      --size: 35%;
+
       width: 100%;
+      height: var(--size);
       display: flex;
       justify-content: space-between;
-      gap: clamp(1rem, 3vw, 2.5rem);
-    }
+      align-items: center;
 
-    .column {
-      width: 50%;
-      height: 100%;
-      .display {
+      z-index: 2;
+
+      .photo {
         display: block;
-        width: 100%;
+        max-height: 100%;
+        width: var(--size);
+        aspect-ratio: 1/1;
+
         border-radius: 5px;
         overflow: hidden;
         img {
           display: block;
           width: 100%;
-          aspect-ratio: 1/1;
+          height: 100%;
           border-radius: 5px;
           object-fit: cover;
         }
@@ -136,91 +173,126 @@ const StyledPage = styled.div`
         }
       }
 
-      .content {
-        margin-top: 2rem;
-        color: #fff;
-        font-size: clamp(0.9rem, 3vw, 2rem);
-        line-height: 1;
-        .name {
-          font-weight: 700;
-          font-size: 1.5em;
-        }
-        .designation {
-          margin-top: 0.1em;
-        }
-      }
-
       .info {
+        height: 100%;
+        width: calc(100% - var(--size) - 5%);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+
         color: #fff;
-        font-size: clamp(0.7rem, 3vw, 1.3rem);
-        position: relative;
-        p {
-          position: relative;
-          z-index: 2;
+        line-height: 1;
+
+        font-size: clamp(0.75rem, 1.2vw, 1rem);
+        h4 {
+          font-size: clamp(1.25rem, 2vw, 2rem);
         }
-        &::before {
-          content: "“";
-          position: absolute;
-          top: -1rem;
-          left: -1rem;
-          font-size: 8em;
-          line-height: 1;
-          vertical-align: top;
-          color: #fff5;
+        p {
+          line-height: 1.25;
+        }
+        .linkedin {
+          font-size: clamp(1rem, 2vw, 1.4rem);
         }
       }
-      .logos {
-        margin-top: clamp(0.5rem, 3vw, 2rem);
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        gap: clamp(1rem, 3vw, 2rem);
-        align-items: center;
-        color: #fffa;
-        font-size: clamp(1rem, 3vw, 2rem);
-        svg {
-          cursor: pointer;
-          transition: color 200ms;
+    }
 
-          &:hover {
-            animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-            color: #fff;
+    .inverted {
+      flex-direction: row-reverse;
+    }
+
+    .navigation {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      z-index: 2;
+
+      .button {
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        cursor: pointer;
+        color: #fff8;
+        transition: color 200ms;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .row {
+        --size: 40%;
+        align-items: flex-start;
+        .photo {
+          img {
+            height: 100%;
+          }
+        }
+        .info {
+          justify-content: flex-start;
+          gap: 0.25rem;
+          p {
+            line-height: 1.15;
+          }
+          .linkedin {
+            display: none;
+          }
+        }
+      }
+    }
+    @media only screen and (max-width: 400px) {
+      .row {
+        .info {
+          font-size: 0.6rem;
+          h4 {
+            font-size: 1.1rem;
           }
 
-          @keyframes shake {
-            10%,
-            90% {
-              transform: translate3d(-1px, 0, 0);
-            }
-
-            20%,
-            80% {
-              transform: translate3d(1px, 0, 0);
-            }
-
-            30%,
-            50%,
-            70% {
-              transform: translate3d(-2px, 0, 0);
-            }
-
-            40%,
-            60% {
-              transform: translate3d(2px, 0, 0);
-            }
+          .linkedin {
+            font-size: 0.9rem;
           }
         }
       }
     }
 
-    .button {
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      cursor: pointer;
-      color: #fff8;
-      transition: color 200ms;
+    @media (min-aspect-ratio: 5/10) and (orientation: portrait) {
+      .row {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        --size: 40%;
+        .photo {
+          height: 100%;
+          min-width: 50%;
+        }
 
-      &:hover {
-        color: #fff;
+        .info {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          align-items: flex-start;
+          flex-direction: column;
+
+          color: #fff;
+          line-height: 1;
+
+          font-size: clamp(0.75rem, 1.2vw, 1rem);
+          h4 {
+            font-size: clamp(1.25rem, 2vw, 2rem);
+          }
+          p {
+            line-height: 1.25;
+          }
+          .linkedin {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+          }
+        }
+      }
+      .inverted {
+        flex-direction: column;
       }
     }
   }

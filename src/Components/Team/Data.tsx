@@ -25,7 +25,7 @@ import jaskaran_jpg from "./../../Media/Team/jaskaran.jpg"
 import aryan_webp from "./../../Media/Team/aryan.webp"
 import aryan_jpg from "./../../Media/Team/aryan.jpg"
 
-export type member = {
+export type EB_Member = {
   details: {
     name: string
     designation: string
@@ -43,11 +43,12 @@ export type member = {
 
 export type coreMember = {
   name: string
+  description: string
   image: string
   linkedin: string
 }
 
-const teamData: member[] = [
+const EB_TeamData: EB_Member[] = [
   {
     images: [
       { imgSrc: parth_webp, type: "image/webp" },
@@ -287,6 +288,85 @@ const teamData: member[] = [
   },
 ]
 
-export const coreMemberData = new Array(23).fill({})
+export const CoreMemberData: coreMember[] = [
+  {
+    name: "Lolly Klosser",
+    description:
+      "sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero",
+    image: "https://robohash.org/vitaeducimussint.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Garnette Hounsom",
+    description:
+      "ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac",
+    image:
+      "https://robohash.org/repudiandaecorporisbeatae.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Steve Mackerel",
+    description:
+      "et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus",
+    image: "https://robohash.org/maioresearumculpa.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Duffy Maurice",
+    description:
+      "neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede",
+    image:
+      "https://robohash.org/officiisquaelaboriosam.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Erl Ginnane",
+    description:
+      "amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient",
+    image:
+      "https://robohash.org/cumquequaeconsequatur.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Amandy Fennelly",
+    description:
+      "erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis",
+    image:
+      "https://robohash.org/saepeblanditiisexercitationem.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Cherri Etches",
+    description:
+      "odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi",
+    image:
+      "https://robohash.org/voluptatemametcorrupti.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Duffie Stockney",
+    description:
+      "in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien",
+    image: "https://robohash.org/temporibusatnatus.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Justinn Brittles",
+    description:
+      "tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget",
+    image: "https://robohash.org/omnisvoluptatemesse.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+  {
+    name: "Lilia Wareham",
+    description:
+      "pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non",
+    image: "https://robohash.org/etetquasi.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+]
 
-export default teamData.reverse()
+export const num_of_members =
+  EB_TeamData.length + CoreMemberData.length / 2 + (CoreMemberData.length % 2)
+
+export default EB_TeamData.reverse()
