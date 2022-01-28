@@ -24,6 +24,7 @@ import jaskaran_jpg from "./../../Media/Team/jaskaran.jpg"
 
 import aryan_webp from "./../../Media/Team/aryan.webp"
 import aryan_jpg from "./../../Media/Team/aryan.jpg"
+import { nanoid } from "nanoid"
 
 export type EB_Member = {
   details: {
@@ -33,18 +34,20 @@ export type EB_Member = {
   }
   images: {
     imgSrc: string
-    type: "image/webp" | "image/jpg"
+    type: "image/webp" | "image/jpg" | string
   }[]
   socials: {
-    type: "instagram" | "facebook" | "linkedin" | "twitter"
+    type: "instagram" | "facebook" | "linkedin" | "twitter" | string
     link: string
   }[]
+  id: string
 }
 
 export type coreMember = {
   name: string
   description: string
   image: string
+  id: string
   linkedin: string
 }
 
@@ -286,7 +289,7 @@ const EB_TeamData: EB_Member[] = [
       },
     ],
   },
-]
+].map(member => ({ ...member, id: nanoid() }))
 
 export const CoreMemberData: coreMember[] = [
   {
@@ -364,9 +367,16 @@ export const CoreMemberData: coreMember[] = [
     image: "https://robohash.org/etetquasi.jpg?size=250x250&set=set1",
     linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
   },
-]
+  {
+    name: "Aryan",
+    description:
+      "pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non",
+    image: "https://robohash.org/etetquasi.jpg?size=250x250&set=set1",
+    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+  },
+].map(member => ({ ...member, id: nanoid() }))
 
 export const num_of_members =
-  EB_TeamData.length + CoreMemberData.length / 2 + (CoreMemberData.length % 2)
+  EB_TeamData.length + Math.round(CoreMemberData.length / 2)
 
-export default EB_TeamData.reverse()
+export default EB_TeamData

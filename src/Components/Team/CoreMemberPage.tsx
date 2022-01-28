@@ -8,7 +8,7 @@ const CoreMemberPage: React.FC<{
   setPosition: React.Dispatch<React.SetStateAction<number>>
   numOfPages: number
   member1: coreMember
-  member2: coreMember
+  member2: coreMember | null
 }> = ({ index, setPosition, position, numOfPages, member2, member1 }) => {
   const nextPage = () => {
     if (position === numOfPages) return
@@ -47,25 +47,27 @@ const CoreMemberPage: React.FC<{
             </a>
           </div>
         </div>
-        <div className="row  inverted">
-          <div className="photo">
-            <img src={member2.image} alt="" />
+        {member2 && (
+          <div className="row  inverted">
+            <div className="photo">
+              <img src={member2.image} alt="" />
+            </div>
+            <div className="info">
+              <a href={member2.linkedin} target="_blank" rel="noreferrer">
+                <h4>{member2.name}</h4>
+              </a>
+              <p>{member2.description}</p>
+              <a
+                className="linkedin"
+                target="_blank"
+                href={member2.linkedin}
+                rel="noreferrer"
+              >
+                <IoLogoLinkedin />
+              </a>
+            </div>
           </div>
-          <div className="info">
-            <a href={member2.linkedin} target="_blank" rel="noreferrer">
-              <h4>{member2.name}</h4>
-            </a>
-            <p>{member2.description}</p>
-            <a
-              className="linkedin"
-              target="_blank"
-              href={member2.linkedin}
-              rel="noreferrer"
-            >
-              <IoLogoLinkedin />
-            </a>
-          </div>
-        </div>
+        )}
 
         <div className="navigation">
           <IoArrowUndo className="button" onClick={prevPage} />

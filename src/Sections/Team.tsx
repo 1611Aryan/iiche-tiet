@@ -18,7 +18,16 @@ import CoreMemberHeading from "Components/Team/CoreMemberHeading"
 export const Team = () => {
   const [position, setPosition] = useState(0)
 
-  useEffect(() => console.log(position, num_of_members), [position])
+  useEffect(
+    () =>
+      console.log({
+        position,
+        num_of_members,
+        eb: EB_TeamData.length,
+        core: Math.round(CoreMemberData.length / 2),
+      }),
+    [position]
+  )
 
   return (
     <StyledSection id="team">
@@ -35,15 +44,16 @@ export const Team = () => {
           .fill({})
           .map((_, index) => (
             <CoreMemberPage
-              index={num_of_members + 1 - index}
+              index={EB_TeamData.length + 2 + index}
               position={position}
               setPosition={setPosition}
               numOfPages={num_of_members + 1}
-              member1={CoreMemberData[index]}
-              member2={CoreMemberData[index + 1]}
-              key={index}
+              member1={CoreMemberData[index * 2]}
+              member2={CoreMemberData[index * 2 + 1] || null}
+              key={CoreMemberData[index].id}
             />
-          ))}
+          ))
+          .reverse()}
         <CoreMemberHeading
           index={EB_TeamData.length + 1}
           position={position}
@@ -52,14 +62,14 @@ export const Team = () => {
         />
         {EB_TeamData.map((member, index) => (
           <EB_PAGE
-            index={EB_TeamData.length - index}
+            index={index + 1}
             position={position}
             setPosition={setPosition}
             member={member}
             numOfPages={num_of_members + 1}
             key={index}
           />
-        ))}
+        )).reverse()}
 
         <CoverPage position={position} setPosition={setPosition} />
       </StyledBook>
@@ -111,6 +121,9 @@ const StyledBook = styled.div`
   perspective: 2000px;
 
   margin-left: clamp(1rem, 3vw, 2rem);
+
+  display: inline-flex;
+  flex-direction: column;
 
   &::after {
     content: "";
