@@ -16,7 +16,7 @@ import CoreMemberPage from "Components/Team/CoreMemberPage"
 import CoreMemberHeading from "Components/Team/CoreMemberHeading"
 
 export const Team = () => {
-  const [position, setPosition] = useState(10)
+  const [position, setPosition] = useState(0)
 
   useEffect(() => console.log(position, num_of_members), [position])
 
