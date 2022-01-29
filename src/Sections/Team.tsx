@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import styled from "@emotion/styled"
 
 import Picture from "../Components/Picture"
@@ -17,17 +17,6 @@ import CoreMemberHeading from "Components/Team/CoreMemberHeading"
 
 export const Team = () => {
   const [position, setPosition] = useState(0)
-
-  useEffect(
-    () =>
-      console.log({
-        position,
-        num_of_members,
-        eb: EB_TeamData.length,
-        core: Math.round(CoreMemberData.length / 2),
-      }),
-    [position]
-  )
 
   return (
     <StyledSection id="team">
@@ -67,7 +56,7 @@ export const Team = () => {
             setPosition={setPosition}
             member={member}
             numOfPages={num_of_members + 1}
-            key={index}
+            key={member.id}
           />
         )).reverse()}
 
@@ -122,9 +111,6 @@ const StyledBook = styled.div`
 
   margin-left: clamp(1rem, 3vw, 2rem);
 
-  display: inline-flex;
-  flex-direction: column;
-
   &::after {
     content: "";
     position: absolute;
@@ -136,6 +122,10 @@ const StyledBook = styled.div`
     border-radius: 10px 0 0 10px;
   }
 
+  > * {
+    will-change: transform;
+  }
+
   .turn {
     transform: rotateY(-180deg);
   }
@@ -144,7 +134,7 @@ const StyledBook = styled.div`
     width: 100%;
     height: 50%;
 
-    perspective: 500px;
+    perspective: 1000px;
   }
 `
 

@@ -41,20 +41,14 @@ const CoreMemberHeading: React.FC<{
 const StyledPage = styled.div`
   z-index: 2;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   transform-origin: left center;
   transform-style: preserve-3d;
-  transition: transform ease 500ms;
+  transition: transform linear 500ms;
   .back {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: #172e35;
     border-radius: 10px 0px 0px 10px;
 
@@ -63,10 +57,7 @@ const StyledPage = styled.div`
   }
   .front {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     border-radius: 0 10px 10px 0;
     overflow: hidden;
 
@@ -81,7 +72,7 @@ const StyledPage = styled.div`
     .bg {
       position: absolute;
       inset: 0;
-      filter: blur(5px) contrast(70%);
+      filter: blur(3px) contrast(70%);
       img {
         width: 100%;
         height: 100%;

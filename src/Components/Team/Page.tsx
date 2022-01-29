@@ -100,14 +100,11 @@ const EB_PAGE: React.FC<{
 const StyledPage = styled.div`
   z-index: 2;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   transform-origin: left center;
   transform-style: preserve-3d;
-  transition: transform ease 500ms;
+  transition: transform linear 500ms;
   .back {
     position: absolute;
     inset: 0;
