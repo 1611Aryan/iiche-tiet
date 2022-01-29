@@ -128,6 +128,9 @@ const StyledBook = styled.div`
 
   .turn {
     transform: rotateY(-180deg);
+    .front {
+      display: none;
+    }
   }
 
   @media only screen and (max-width: 500px) {
