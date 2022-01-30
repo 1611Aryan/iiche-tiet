@@ -379,4 +379,6 @@ export const CoreMemberData: coreMember[] = [
 export const num_of_members =
   EB_TeamData.length + Math.round(CoreMemberData.length / 2)
 
+export const EB_MEMBERS_LENGTH = EB_TeamData.length
+
 export default EB_TeamData

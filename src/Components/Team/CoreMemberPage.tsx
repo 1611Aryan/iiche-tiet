@@ -253,45 +253,6 @@ const StyledPage = styled.div`
         }
       }
     }
-
-    @media (min-aspect-ratio: 5/10) and (orientation: portrait) {
-      .row {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        --size: 40%;
-        .photo {
-          height: 100%;
-          min-width: 50%;
-        }
-
-        .info {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          gap: 1rem;
-          align-items: flex-start;
-          flex-direction: column;
-
-          color: #fff;
-          line-height: 1;
-
-          font-size: clamp(0.75rem, 1.2vw, 1rem);
-          h4 {
-            font-size: clamp(1.25rem, 2vw, 2rem);
-          }
-          p {
-            line-height: 1.25;
-          }
-          .linkedin {
-            font-size: clamp(1rem, 2vw, 1.4rem);
-          }
-        }
-      }
-      .inverted {
-        flex-direction: column;
-      }
-    }
   }
 `
 

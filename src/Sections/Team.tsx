@@ -9,11 +9,14 @@ import bg_jpg from "./../Media/Team/teamBg.jpg"
 
 import EB_TeamData, {
   CoreMemberData,
+  EB_MEMBERS_LENGTH,
   num_of_members,
 } from "./../Components/Team/Data"
 import EB_PAGE from "./../Components/Team/Page"
 import CoreMemberPage from "Components/Team/CoreMemberPage"
 import CoreMemberHeading from "Components/Team/CoreMemberHeading"
+import CoreBookMark from "Components/Team/CoreBookMark"
+import EB_BOOKMARK from "Components/Team/EB_BOOKMARK"
 
 export const Team = () => {
   const [position, setPosition] = useState(0)
@@ -29,7 +32,7 @@ export const Team = () => {
       />
       <div className="overlay"></div>
       <StyledBook>
-        {Array(num_of_members - EB_TeamData.length)
+        {Array(num_of_members - EB_MEMBERS_LENGTH)
           .fill({})
           .map((_, index) => (
             <CoreMemberPage
@@ -61,6 +64,11 @@ export const Team = () => {
         )).reverse()}
 
         <CoverPage position={position} setPosition={setPosition} />
+        {position < EB_MEMBERS_LENGTH + 1 ? (
+          <CoreBookMark setPosition={setPosition} />
+        ) : (
+          <EB_BOOKMARK setPosition={setPosition} />
+        )}
       </StyledBook>
     </StyledSection>
   )
@@ -128,12 +136,20 @@ const StyledBook = styled.div`
 
   .turn {
     transform: rotateY(-180deg);
-    .front {
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    height: 50%;
+
+    perspective: 1000px;
+
+    .turn .front {
       display: none;
     }
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-aspect-ratio: 1/1) {
     width: 100%;
     height: 50%;
 
