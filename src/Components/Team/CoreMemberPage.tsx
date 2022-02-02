@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { coreMember } from "./Data"
 import { IoArrowRedo, IoArrowUndo, IoLogoLinkedin } from "react-icons/io5"
+import { useRef } from "react"
 
 const CoreMemberPage: React.FC<{
   index: number
@@ -10,6 +11,8 @@ const CoreMemberPage: React.FC<{
   member1: coreMember
   member2: coreMember | null
 }> = ({ index, setPosition, position, numOfPages, member2, member1 }) => {
+  const imageRef = useRef<HTMLImageElement>(null)
+
   const nextPage = () => {
     if (position === numOfPages) return
     setPosition(position => index + 1)
@@ -19,11 +22,20 @@ const CoreMemberPage: React.FC<{
     setPosition(position => index - 1)
   }
 
+  const errorHandler = (err: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    console.log(err)
+    if (imageRef.current)
+      imageRef.current.src =
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+  }
+
   return (
     <StyledPage className={position > index ? "turn" : ""}>
       <div className="front">
         <div className="bg">
           <img
+            ref={imageRef}
+            onError={errorHandler}
             src="https://images.pexels.com/photos/3293037/pexels-photo-3293037.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
             alt=""
           />
@@ -142,7 +154,6 @@ const StyledPage = styled.div`
         display: block;
         max-height: 100%;
         width: var(--size);
-        aspect-ratio: 1/1;
 
         border-radius: 5px;
         overflow: hidden;
@@ -151,6 +162,7 @@ const StyledPage = styled.div`
           width: 100%;
           height: 100%;
           border-radius: 5px;
+          object-position: center center;
           object-fit: cover;
         }
         position: relative;

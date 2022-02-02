@@ -86,7 +86,7 @@ const EB_TeamData: EB_Member[] = [
     details: {
       name: "Anushka Khera",
       designation: "General Secretary",
-      info: "In the end it's all about perfection.",
+      info: "Leadership isn’t about a title or a designation it’s about impact , influence and inspiration. Also I believe it’s all about perfection and how someone achieves it.",
     },
     socials: [
       {
@@ -197,7 +197,7 @@ const EB_TeamData: EB_Member[] = [
     details: {
       name: "Pratham Thakur",
       designation: "Finance Head",
-      info: `🤷🏻‍♂️`,
+      info: "Accustomed to aiming high, with a penchant for achieving and a knack of doing what others don’t :- are some similarities I could list between IIChE TIET and myself. Big brains and never-say-die attitude has been our bank since, Day 1. Did I mention the bank? Well I’m the Treasurer xD",
     },
     socials: [
       { type: "instagram", link: "https://instagram.com/pratham__thakur" },
@@ -293,88 +293,161 @@ const EB_TeamData: EB_Member[] = [
 
 export const CoreMemberData: coreMember[] = [
   {
-    name: "Lolly Klosser",
+    name: "Kumkum suri",
     description:
-      "sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero",
-    image: "https://robohash.org/vitaeducimussint.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
-  },
-  {
-    name: "Garnette Hounsom",
-    description:
-      "ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac",
+      "I believe a person can learn new things under a good leader. I thank IIChE TIET for giving me a platform to work under such good leaders.",
+    linkedin: "linkedin.com/in/kumkum-suri-b28689219",
     image:
-      "https://robohash.org/repudiandaecorporisbeatae.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "https://drive.google.com/uc?export=view&id=1_E2S0OjrclFoSxBH7bDSe0BS8fshf2hI",
   },
   {
-    name: "Steve Mackerel",
+    name: "Arushi Gupta",
     description:
-      "et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus",
-    image: "https://robohash.org/maioresearumculpa.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
-  },
-  {
-    name: "Duffy Maurice",
-    description:
-      "neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede",
+      " A psychology enthusiast who try to look at situations from others' perspective and understanding their thought process. I hold the unpopular opinion that 'Overthinking is a boon if conclusive.' Fascinated by Sports, Music, Nature and Intellectuality. I am in the process of becoming what I want the world to be.",
+    linkedin: "https://www.linkedin.com/in/arushi-gupta-7191bb20b/",
     image:
-      "https://robohash.org/officiisquaelaboriosam.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "https://drive.google.com/uc?export=view&id=1qeJPuisKkHBRQENoZM8pQli6lBlj_6jT",
   },
   {
-    name: "Erl Ginnane",
+    name: "Vanshika Singal",
     description:
-      "amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient",
+      "I’m a mature, candid individual who has and values integrity. ",
+    linkedin: "https://www.linkedin.com/in/vanshika-singal-b6b3b6200",
     image:
-      "https://robohash.org/cumquequaeconsequatur.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "https://drive.google.com/uc?export=view&id=1g1usASHo3bz98YSgs-ifmVNbIaZROdt1",
   },
   {
-    name: "Amandy Fennelly",
+    name: "Bhavjot Singh",
     description:
-      "erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis",
+      "A people person who is determined and decisive.I'm passionate about my work and hold an opinion that \"Let's fly high, not to rest but to persist !",
+    linkedin: "https://www.linkedin.com/in/bhavjot-singh-46a4031bb",
     image:
-      "https://robohash.org/saepeblanditiisexercitationem.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "https://drive.google.com/uc?export=view&id=1w-0xGKK4VvjUVjdtW5t4qeHK1AwTFcD0",
   },
   {
-    name: "Cherri Etches",
+    name: "Riddhi Sharma ",
     description:
-      "odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi",
+      "Always in search of seeking a great perhaps and one can say that I found a great perhaps in IIChE. It not only helped me with providing the knowledge but also helped me connect with various talented people in our team thereby giving me an overall wonderful experience. ",
+    linkedin: "https://www.linkedin.com/in/riddhi-sharma-3353b920b",
     image:
-      "https://robohash.org/voluptatemametcorrupti.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "https://drive.google.com/uc?export=view&id=1DVvxI4RhHzm-HienC573KGD5hfsLvX6i",
   },
   {
-    name: "Duffie Stockney",
+    name: "Ayushi Gogia ",
     description:
-      "in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien",
-    image: "https://robohash.org/temporibusatnatus.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "Always believed that I'm in the process of becoming the best version of myself and in this process IIChE played a major role",
+    linkedin: "https://www.linkedin.com/in/ayushi-gogia-406892206",
+    image:
+      "https://drive.google.com/uc?export=view&id=1fAPzmeItVb7FvIUD3C1SVsmLd-9MLCUH",
   },
   {
-    name: "Justinn Brittles",
+    name: "Sachin Saini",
     description:
-      "tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget",
-    image: "https://robohash.org/omnisvoluptatemesse.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "I tend to be driven in my approach to life and work. I always look forward towards my work and introducing new ideas.",
+    linkedin: "https://www.linkedin.com/in/sachin-saini-b817431a6",
+    image:
+      "https://drive.google.com/uc?export=view&id=1BcpWgLRYFmMUwx7mqXvsreF0mx4wTkV1",
   },
   {
-    name: "Lilia Wareham",
+    name: "Aman Raizada",
     description:
-      "pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non",
-    image: "https://robohash.org/etetquasi.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "A big tech enthusiast and desire to work in technical related field. I like to thank IIChE for providing me the platform and encouragement to achieve my desires.",
+    linkedin: "https://www.linkedin.com/in/aman-raizada-b84b41213/",
+    image:
+      "https://drive.google.com/uc?export=view&id=1H3yQQwub0KAHjdzJKpMFE52C-5h-1Grd",
   },
   {
-    name: "Aryan",
+    name: "Muskan",
     description:
-      "pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non",
-    image: "https://robohash.org/etetquasi.jpg?size=250x250&set=set1",
-    linkedin: "https://www.linkedin.com/in/aryan-g-27944b129/",
+      "Persistence and determination alone are omnipotent'.My motto is to give my honest shot for IICHE and enlarge it, empower it and take it to even bigger heights.I also strive and motivate all the co-members of IICHE to establish an aim for it and achive it in these few golden years of graduation.",
+    linkedin: "https://www.linkedin.com/in/muskan-85210b212",
+    image:
+      "https://drive.google.com/uc?export=view&id=14fk82b_i5kGoEkiSLaO8yZB5uVPAb68s",
   },
-].map(member => ({ ...member, id: nanoid() }))
+  {
+    name: "Niket Jindal",
+    description:
+      "I'm a sophomore with an open mind and a thirst for knowledge. With the IIChE enthusiasts, I'm pushing my limits searching for new and exciting experiences.",
+    linkedin: "https://www.linkedin.com/in/niket-jindal-6681671b1",
+    image:
+      "https://drive.google.com/uc?export=view&id=1g6n22_FdnuL6_OwUZLPruR5-6xWa4zgp",
+  },
+  {
+    name: "Kriti Bansal",
+    description:
+      "I am an inquisitive opportunist and IIChE TIET offers a work and fun intensive environment with diverse opportunities for me to build upon as a person.",
+    linkedin: "https://www.linkedin.com/in/kriti-bansal-962804220",
+    image:
+      "https://drive.google.com/uc?export=view&id=1J4HmXX_MmLp1YjK6vm8zA-X40ij0J98T",
+  },
+  {
+    name: "Dev Gulati",
+    description:
+      "I strongly believe in appreciating each other's work to build a good working environment",
+    linkedin: "https://www.linkedin.com/in/dev-gulati-6a3903204",
+    image:
+      "https://drive.google.com/uc?export=view&id=1tP5Woupvq1NZvlHg-CxqVxBaxdM-sZth",
+  },
+  {
+    name: "Granth Dhir",
+    description: "The best way to predict the future is to create it",
+    linkedin: "https://www.linkedin.com/in/granth-d-aa8ab1123/",
+    image:
+      "https://drive.google.com/uc?export=view&id=1qPHJ2MKtX7YAJVOd4jAKRSAz59ViFa9n",
+  },
+  {
+    name: "Niket Dhingra",
+    description:
+      "Nothing can be achieved until first it's believed. I'm a person who belives in myself to ahieve anything.",
+    linkedin: "linkedin.com/in/niket-dhingra-1a3a241ba",
+    image:
+      "https://drive.google.com/uc?export=view&id=1jnN92370qgncnc6mHX_zfJbogaFxGZlj",
+  },
+  {
+    name: "Jaya Sharma",
+    description:
+      "I'm a great believer in luck, and I find it harder I work, the more I have it. I do have great time management skills.",
+    linkedin: "https://www.linkedin.com/in/jaya-sharma-631086202/",
+    image:
+      "https://drive.google.com/uc?export=view&id=1c5A8tQ_28lqVHVUjJoXbzpnJJ1FCchsh",
+  },
+  {
+    name: "Sahil Bhatia",
+    description:
+      "\"Babumoshai!, Zindagi badi honi chahiye, Lambi nahi.\". I feel the need to sqeeze the most out of my life. I wanna do everything that I've never tried and hence I feel that the exposure and the confidence I've recieved here has allowed me to achieve more than I had hoped. I'm a big music enthusiast so hmu and Let's Jam!",
+    linkedin: "https://www.linkedin.com/in/sahil-bhatia-2621a4200/",
+    image:
+      "https://drive.google.com/uc?export=view&id=1-7DsCNufB-YS4JyRLBCi6D5ekfpzAMIs",
+  },
+  {
+    name: "Pranshu",
+    description:
+      "Pranshu : Sun : I want be like literal meaning of my name, that is, sun while not forgetting my moral values.",
+    linkedin: "https://www.linkedin.com/in/pranshu-taneja-48525420b",
+    image:
+      "https://drive.google.com/uc?export=view&id=1WKQJH72YrDAubtHcLJ77SxOD7PZ0RKkY",
+  },
+  {
+    name: "Adya Shukla",
+    description:
+      "A multipotentialite. Loves new opportunities which compels me to outweigh challenges. Hardwork, patience, fairplay and loyalty. Yess am a Hufflepuff ",
+    linkedin: "https://www.linkedin.com/in/adya-shukla-52b3881bb",
+    image:
+      "https://drive.google.com/uc?export=view&id=1pTdXkIpfcoxQgAxaBbp0EMCddJP9my0k",
+  },
+  {
+    name: "Aarooja Bansal",
+    description:
+      "An ambivert who loves to interact with new people, learn new things and romanticize literature. I'm grateful to IIChE for providing us a wonderful platform for our personal growth. ",
+    linkedin: "https://www.linkedin.com/in/aarooja-bansal-4591a0201/",
+    image:
+      "https://drive.google.com/uc?export=view&id=1knmfZ15yz4vi0t2Nzq9ZUrtw4p1GvHLR",
+  },
+].map(member => ({
+  ...member,
+  id: nanoid(),
+  description: member.description.slice(0, 200).trim(),
+}))
 
 export const num_of_members =
   EB_TeamData.length + Math.round(CoreMemberData.length / 2)
