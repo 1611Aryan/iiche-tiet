@@ -14,8 +14,8 @@ import EB_TeamData, {
 } from "./../Components/Team/Data"
 import EB_PAGE from "./../Components/Team/Page"
 import CoreMemberPage from "Components/Team/CoreMemberPage"
-import CoreMemberHeading from "Components/Team/CoreMemberHeading"
-import CoreBookMark from "Components/Team/CoreBookMark"
+import CoreMemberHeading from "Components/Team/Core/CoreMemberHeading"
+import CoreBookMark from "Components/Team/Core/CoreBookMark"
 import EB_BOOKMARK from "Components/Team/EB_BOOKMARK"
 
 export const Team = () => {

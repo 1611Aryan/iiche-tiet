@@ -443,6 +443,22 @@ export const CoreMemberData: coreMember[] = [
     image:
       "https://drive.google.com/uc?export=view&id=1knmfZ15yz4vi0t2Nzq9ZUrtw4p1GvHLR",
   },
+  {
+    name: "Prachi Bhardwaj",
+    description:
+      "Doing the best at this moment puts you in the best place for the next. I'm a great believer in luck, and I find the harder I work, the more I have of it.",
+    linkedin: "https://www.linkedin.com/in/prachi-bhardwaj-310a2b200/",
+    image:
+      "https://drive.google.com/uc?export=view&id=1dlRr_szswloWu3Bw9X3pdd5cjD1_Lw4B",
+  },
+  {
+    name: "Simran Bansal",
+    description:
+      "Always looking for opportunities to learn and gain experience and IIChE has given a platform where I see a better version of myself everyday",
+    linkedin: "https://www.linkedin.com/in/simran-bansal-aa7182201",
+    image:
+      "https://drive.google.com/uc?export=view&id=1o_zyyhwowTWyzEn7LyhagQV8CDZ9kA8P",
+  },
 ].map(member => ({
   ...member,
   id: nanoid(),

@@ -1,5 +1,5 @@
-import StyledBookMark from "./BookMark"
-import { EB_MEMBERS_LENGTH } from "./Data"
+import StyledBookMark from "../BookMark"
+import { EB_MEMBERS_LENGTH } from "../Data"
 
 const CoreBookMark: React.FC<{
   setPosition: React.Dispatch<React.SetStateAction<number>>
