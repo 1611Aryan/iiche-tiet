@@ -303,10 +303,18 @@ export const CoreMemberData: coreMember[] = [
   {
     name: "Arushi Gupta",
     description:
-      " A psychology enthusiast who try to look at situations from others' perspective and understanding their thought process. I hold the unpopular opinion that 'Overthinking is a boon if conclusive.' Fascinated by Sports, Music, Nature and Intellectuality. I am in the process of becoming what I want the world to be.",
+      " A psychology enthusiast who try to look at situations from others' perspective and understanding their thought process. I hold the unpopular opinion that 'Overthinking is a boon if conclusive.'",
     linkedin: "https://www.linkedin.com/in/arushi-gupta-7191bb20b/",
     image:
       "https://drive.google.com/uc?export=view&id=1qeJPuisKkHBRQENoZM8pQli6lBlj_6jT",
+  },
+  {
+    name: "Abhinav Garg",
+    description:
+      "I am not a very intelligent student but sure I am dynamic as I am capable of managing and handling serious and difficult situations.",
+    linkedin: "https://www.linkedin.com/in/abhinav-garg-38838a146/",
+    image:
+      "https://drive.google.com/uc?export=view&id=1H0ODCzciRdgYzcEacrr58jGngN2aPbQk",
   },
   {
     name: "Vanshika Singal",
@@ -314,7 +322,7 @@ export const CoreMemberData: coreMember[] = [
       "I’m a mature, candid individual who has and values integrity. ",
     linkedin: "https://www.linkedin.com/in/vanshika-singal-b6b3b6200",
     image:
-      "https://drive.google.com/uc?export=view&id=1g1usASHo3bz98YSgs-ifmVNbIaZROdt1",
+      "https://drive.google.com/uc?export=view&id=1gcKkwEQ4x9WKkC7rnLqR8O7H1UvBYZE1",
   },
   {
     name: "Bhavjot Singh",
@@ -393,7 +401,7 @@ export const CoreMemberData: coreMember[] = [
     description: "The best way to predict the future is to create it",
     linkedin: "https://www.linkedin.com/in/granth-d-aa8ab1123/",
     image:
-      "https://drive.google.com/uc?export=view&id=1qPHJ2MKtX7YAJVOd4jAKRSAz59ViFa9n",
+      "https://drive.google.com/uc?export=view&id=1kMGgQHfizLU0OnTsUoI3j_ih-drzq7M2",
   },
   {
     name: "Niket Dhingra",
@@ -401,7 +409,7 @@ export const CoreMemberData: coreMember[] = [
       "Nothing can be achieved until first it's believed. I'm a person who belives in myself to ahieve anything.",
     linkedin: "linkedin.com/in/niket-dhingra-1a3a241ba",
     image:
-      "https://drive.google.com/uc?export=view&id=1jnN92370qgncnc6mHX_zfJbogaFxGZlj",
+      "https://drive.google.com/uc?export=view&id=1aXBFSnE1ZuezzV_P5HdX7zX4MGR8jeJk",
   },
   {
     name: "Jaya Sharma",
@@ -462,7 +470,7 @@ export const CoreMemberData: coreMember[] = [
 ].map(member => ({
   ...member,
   id: nanoid(),
-  description: member.description.slice(0, 200).trim(),
+  description: member.description.slice(0, 250).trim(),
 }))
 
 export const num_of_members =
