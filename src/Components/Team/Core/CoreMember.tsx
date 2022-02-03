@@ -22,18 +22,24 @@ const CoreMember: React.FC<{ member: coreMember; inverted: boolean }> = ({
         <img ref={imageRef} onError={errorHandler} src={member.image} alt="" />
       </div>
       <div className="info">
-        <a target="_blank" href={member.linkedin} rel="noreferrer">
+        <a
+          target="_blank"
+          href={member.linkedin ? member.linkedin : "#"}
+          rel="noreferrer"
+        >
           <h4>{member.name}</h4>
         </a>
         <p>{member.description}</p>
-        <a
-          className="linkedin"
-          target="_blank"
-          href={member.linkedin}
-          rel="noreferrer"
-        >
-          <IoLogoLinkedin />
-        </a>
+        {member.linkedin && (
+          <a
+            className="linkedin"
+            target="_blank"
+            href={member.linkedin}
+            rel="noreferrer"
+          >
+            <IoLogoLinkedin />
+          </a>
+        )}
       </div>
     </StyledCoreMember>
   )

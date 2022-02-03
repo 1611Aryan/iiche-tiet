@@ -327,23 +327,22 @@ export const CoreMemberData: coreMember[] = [
   {
     name: "Bhavjot Singh",
     description:
-      "A people person who is determined and decisive.I'm passionate about my work and hold an opinion that \"Let's fly high, not to rest but to persist !",
+      "A people person who is determined and decisive.I'm passionate about my work and hold an opinion that \"Let's fly high, not to rest but to persist\" !",
     linkedin: "https://www.linkedin.com/in/bhavjot-singh-46a4031bb",
     image:
-      "https://drive.google.com/uc?export=view&id=1w-0xGKK4VvjUVjdtW5t4qeHK1AwTFcD0",
+      "https://drive.google.com/uc?export=view&id=1xNs15RCWw_Qq3B8WGg67KoBzpDvHVqFf",
   },
   {
     name: "Riddhi Sharma ",
-    description:
-      "Always in search of seeking a great perhaps and one can say that I found a great perhaps in IIChE. It not only helped me with providing the knowledge but also helped me connect with various talented people in our team thereby giving me an overall wonderful experience. ",
+    description: "Always in search of seeking a great perhaps. ",
     linkedin: "https://www.linkedin.com/in/riddhi-sharma-3353b920b",
     image:
-      "https://drive.google.com/uc?export=view&id=1DVvxI4RhHzm-HienC573KGD5hfsLvX6i",
+      "https://drive.google.com/uc?export=view&id=1DcUX3V89LCh2FmlEZEBQ0Mkd2XNKYe94",
   },
   {
     name: "Ayushi Gogia ",
     description:
-      "Always believed that I'm in the process of becoming the best version of myself and in this process IIChE played a major role",
+      "An opportunist,working in the process of becoming the best version of myself!",
     linkedin: "https://www.linkedin.com/in/ayushi-gogia-406892206",
     image:
       "https://drive.google.com/uc?export=view&id=1fAPzmeItVb7FvIUD3C1SVsmLd-9MLCUH",
@@ -367,7 +366,7 @@ export const CoreMemberData: coreMember[] = [
   {
     name: "Muskan",
     description:
-      "Persistence and determination alone are omnipotent'.My motto is to give my honest shot for IICHE and enlarge it, empower it and take it to even bigger heights.I also strive and motivate all the co-members of IICHE to establish an aim for it and achive it in these few golden years of graduation.",
+      "IICHE has provided me with a lot of wonderful experience.My motto is to give my honest shot for IICHE and enlarge it, empower it and take it to even bigger heights.",
     linkedin: "https://www.linkedin.com/in/muskan-85210b212",
     image:
       "https://drive.google.com/uc?export=view&id=14fk82b_i5kGoEkiSLaO8yZB5uVPAb68s",
@@ -401,7 +400,7 @@ export const CoreMemberData: coreMember[] = [
     description: "The best way to predict the future is to create it",
     linkedin: "https://www.linkedin.com/in/granth-d-aa8ab1123/",
     image:
-      "https://drive.google.com/uc?export=view&id=1kMGgQHfizLU0OnTsUoI3j_ih-drzq7M2",
+      "https://drive.google.com/uc?export=view&id=1qPHJ2MKtX7YAJVOd4jAKRSAz59ViFa9n",
   },
   {
     name: "Niket Dhingra",
@@ -438,7 +437,7 @@ export const CoreMemberData: coreMember[] = [
   {
     name: "Adya Shukla",
     description:
-      "A multipotentialite. Loves new opportunities which compels me to outweigh challenges. Hardwork, patience, fairplay and loyalty. Yess am a Hufflepuff ",
+      "A multipotentialite. Loves new opportunities which compel her to outgrow challenges. Hardworking, patient, team player and a hufflepuff.",
     linkedin: "https://www.linkedin.com/in/adya-shukla-52b3881bb",
     image:
       "https://drive.google.com/uc?export=view&id=1pTdXkIpfcoxQgAxaBbp0EMCddJP9my0k",
@@ -452,9 +451,17 @@ export const CoreMemberData: coreMember[] = [
       "https://drive.google.com/uc?export=view&id=1knmfZ15yz4vi0t2Nzq9ZUrtw4p1GvHLR",
   },
   {
+    name: "Jatin kataria",
+    description:
+      "An extrovert ,always up for learning new things . Love to do things which are out of my domain . You need to aim beyond what you are capable of",
+    linkedin: " ",
+    image:
+      "https://drive.google.com/uc?export=view&id=1_aiqloV15T3K78m57GX7C8kA6ft3lPaB",
+  },
+  {
     name: "Prachi Bhardwaj",
     description:
-      "Doing the best at this moment puts you in the best place for the next. I'm a great believer in luck, and I find the harder I work, the more I have of it.",
+      "Doing the best at this moment puts you in the best place for t",
     linkedin: "https://www.linkedin.com/in/prachi-bhardwaj-310a2b200/",
     image:
       "https://drive.google.com/uc?export=view&id=1dlRr_szswloWu3Bw9X3pdd5cjD1_Lw4B",
@@ -471,6 +478,7 @@ export const CoreMemberData: coreMember[] = [
   ...member,
   id: nanoid(),
   description: member.description.slice(0, 250).trim(),
+  linkedin: member.linkedin.trim(),
 }))
 
 export const num_of_members =
