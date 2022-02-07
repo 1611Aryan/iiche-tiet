@@ -12,7 +12,7 @@ import EB_TeamData, {
   EB_MEMBERS_LENGTH,
   num_of_members,
 } from "./../Components/Team/Data"
-import EB_PAGE from "./../Components/Team/Page"
+import EB_PAGE from "../Components/Team/EB_PAGE"
 import CoreMemberPage from "Components/Team/CoreMemberPage"
 import CoreMemberHeading from "Components/Team/Core/CoreMemberHeading"
 import CoreBookMark from "Components/Team/Core/CoreBookMark"
@@ -136,6 +136,14 @@ const StyledBook = styled.div`
 
   .turn {
     transform: rotateY(-180deg);
+
+    animation: disappear 1ms linear 300ms;
+  }
+
+  @keyframes disappear {
+    to {
+      opacity: 0;
+    }
   }
 
   @media only screen and (max-width: 800px) {

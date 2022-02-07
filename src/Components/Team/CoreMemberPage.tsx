@@ -54,6 +54,7 @@ const StyledPage = styled.div`
   transform-style: preserve-3d;
   transition: transform linear 500ms;
   .back {
+    z-index: 1;
     position: absolute;
     inset: 0;
 
@@ -64,6 +65,7 @@ const StyledPage = styled.div`
     pointer-events: none;
   }
   .front {
+    z-index: 2;
     position: absolute;
     inset: 0;
     border-radius: 0 10px 10px 0;

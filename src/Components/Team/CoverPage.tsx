@@ -59,6 +59,7 @@ const StyledCoverPage = styled.div`
   transition: transform linear 500ms;
 
   .back {
+    z-index: 1;
     position: absolute;
     inset: 0;
     background: #172e35;
@@ -68,6 +69,7 @@ const StyledCoverPage = styled.div`
     pointer-events: none;
   }
   .front {
+    z-index: 2;
     position: absolute;
     inset: 0;
     border-radius: 0 10px 10px 0;
