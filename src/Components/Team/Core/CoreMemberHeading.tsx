@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { IoArrowRedo, IoArrowUndo } from "react-icons/io5"
+import { EB_MEMBERS_LENGTH, num_of_members } from "../Data"
 
 const CoreMemberHeading: React.FC<{
   index: number
@@ -17,7 +18,10 @@ const CoreMemberHeading: React.FC<{
   }
 
   return (
-    <StyledPage className={position > index ? "turn" : ""}>
+    <StyledPage
+      theme={{ index: num_of_members - EB_MEMBERS_LENGTH }}
+      className={position > index ? "turn" : ""}
+    >
       <div className="front">
         <div className="bg">
           <img
@@ -38,7 +42,9 @@ const CoreMemberHeading: React.FC<{
   )
 }
 
-const StyledPage = styled.div`
+const StyledPage = styled.div<{ theme: { index: number } }>`
+  /* --index: ${props => props.theme.index + 4};
+  z-index: var(--index); */
   z-index: 2;
   position: absolute;
   inset: 0;
@@ -70,6 +76,8 @@ const StyledPage = styled.div`
     border-left: 2px dashed #fff8;
 
     padding: clamp(1rem, 3vw, 2rem);
+
+    backface-visibility: hidden;
 
     .bg {
       position: absolute;

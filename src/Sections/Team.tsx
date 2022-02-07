@@ -136,14 +136,6 @@ const StyledBook = styled.div`
 
   .turn {
     transform: rotateY(-180deg);
-
-    animation: disappear 1ms linear 300ms;
-  }
-
-  @keyframes disappear {
-    to {
-      opacity: 0;
-    }
   }
 
   @media only screen and (max-width: 800px) {
@@ -151,10 +143,10 @@ const StyledBook = styled.div`
     height: 50%;
 
     perspective: 1000px;
-
+    /* 
     .turn .front {
       display: none;
-    }
+    } */
   }
 
   @media only screen and (max-aspect-ratio: 1/1) {

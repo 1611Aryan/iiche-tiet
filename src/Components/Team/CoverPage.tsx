@@ -8,6 +8,7 @@ import logo_png from "./../../Media/Logo/logoWhite.png"
 
 import cover_webp from "./../../Media/Team/teamCover.webp"
 import cover_jpg from "./../../Media/Team/teamCover.jpg"
+import { num_of_members } from "./Data"
 
 const CoverPage: React.FC<{
   setPosition: React.Dispatch<React.SetStateAction<number>>
@@ -18,7 +19,10 @@ const CoverPage: React.FC<{
   }
 
   return (
-    <StyledCoverPage className={position !== 0 ? "turn" : ""}>
+    <StyledCoverPage
+      theme={{ index: num_of_members + 2 }}
+      className={position !== 0 ? "turn" : ""}
+    >
       <div className="front">
         <Picture
           images={[
@@ -49,7 +53,9 @@ const CoverPage: React.FC<{
   )
 }
 
-const StyledCoverPage = styled.div`
+const StyledCoverPage = styled.div<{ theme: { index: number } }>`
+  /* --index: ${props => props.theme.index + 4};
+  z-index: var(--index); */
   z-index: 2;
   position: absolute;
   inset: 0;
@@ -65,7 +71,6 @@ const StyledCoverPage = styled.div`
     background: #172e35;
     border-radius: 10px 0px 0px 10px;
 
-    transform: rotateY(180deg);
     pointer-events: none;
   }
   .front {
@@ -77,6 +82,8 @@ const StyledCoverPage = styled.div`
     place-items: center;
 
     overflow: hidden;
+
+    backface-visibility: hidden;
 
     background: var(--primaryColor);
     padding: clamp(1rem, 3vw, 2rem);
@@ -122,11 +129,9 @@ const StyledCoverPage = styled.div`
   }
 
   .coverPhoto {
+    z-index: 1;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     opacity: 0.5;
     filter: blur(5px) contrast(80%);
 
@@ -139,6 +144,7 @@ const StyledCoverPage = styled.div`
   }
 
   svg {
+    z-index: 10;
     position: absolute;
     bottom: clamp(1rem, 3vw, 2rem);
     right: clamp(1rem, 3vw, 2rem);

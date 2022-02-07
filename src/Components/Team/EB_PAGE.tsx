@@ -8,7 +8,7 @@ import {
   IoLogoTwitter,
 } from "react-icons/io5"
 import Picture from "../Picture"
-import { EB_Member } from "./Data"
+import { EB_Member, num_of_members } from "./Data"
 
 const EB_PAGE: React.FC<{
   member: EB_Member
@@ -27,7 +27,10 @@ const EB_PAGE: React.FC<{
   }
 
   return (
-    <StyledPage className={position > index ? "turn" : ""}>
+    <StyledPage
+      theme={{ index: num_of_members - index + 1 }}
+      className={position > index ? "turn" : ""}
+    >
       <div className="front">
         <Picture className="bg" images={member.images} />
         <div className="row">
@@ -92,12 +95,13 @@ const EB_PAGE: React.FC<{
           )}
         </div>
       </div>
-      <div className="back"></div>
     </StyledPage>
   )
 }
 
-const StyledPage = styled.div`
+const StyledPage = styled.div<{ theme: { index: number } }>`
+  /* --index: ${props => props.theme.index + 4};
+  z-index: var(--index); */
   z-index: 2;
   position: absolute;
   inset: 0;
@@ -105,15 +109,14 @@ const StyledPage = styled.div`
   transform-origin: left center;
   transform-style: preserve-3d;
   transition: transform linear 500ms;
-  .back {
+  &::before {
     z-index: 1;
-
+    content: "";
     position: absolute;
     inset: 0;
     background: #172e35;
     border-radius: 10px 0px 0px 10px;
 
-    transform: rotateY(180deg);
     pointer-events: none;
   }
   .front {
@@ -126,6 +129,8 @@ const StyledPage = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
+    backface-visibility: hidden;
 
     background: var(--primaryColor);
     border-left: 2px dashed #fff8;
