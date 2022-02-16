@@ -1,10 +1,11 @@
+import { offset } from "Sections/Team"
 import StyledBookMark from "./BookMark"
 
 const EB_BOOKMARK: React.FC<{
   setPosition: React.Dispatch<React.SetStateAction<number>>
 }> = ({ setPosition }) => {
   const clickHandler = () => {
-    setPosition(1)
+    setPosition(offset)
   }
 
   return (

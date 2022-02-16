@@ -17,8 +17,11 @@ import CoreMemberPage from "Components/Team/CoreMemberPage"
 import CoreMemberHeading from "Components/Team/Core/CoreMemberHeading"
 import CoreBookMark from "Components/Team/Core/CoreBookMark"
 import EB_BOOKMARK from "Components/Team/EB_BOOKMARK"
+import PresidentPage from "Components/Team/President"
 
-export const Team = () => {
+export const offset = 2
+
+const Team = () => {
   const [position, setPosition] = useState(0)
 
   return (
@@ -47,24 +50,30 @@ export const Team = () => {
           ))
           .reverse()}
         <CoreMemberHeading
-          index={EB_TeamData.length + 1}
+          index={EB_TeamData.length + offset}
           position={position}
           setPosition={setPosition}
-          numOfPages={num_of_members + 1}
+          numOfPages={num_of_members + offset}
         />
         {EB_TeamData.map((member, index) => (
           <EB_PAGE
-            index={index + 1}
+            index={index + offset}
             position={position}
             setPosition={setPosition}
             member={member}
-            numOfPages={num_of_members + 1}
+            numOfPages={num_of_members + offset}
             key={member.id}
           />
         )).reverse()}
+        <PresidentPage
+          index={1}
+          position={position}
+          setPosition={setPosition}
+          numOfPages={num_of_members + offset}
+        />
 
         <CoverPage position={position} setPosition={setPosition} />
-        {position < EB_MEMBERS_LENGTH + 1 ? (
+        {position < EB_MEMBERS_LENGTH + offset ? (
           <CoreBookMark setPosition={setPosition} />
         ) : (
           <EB_BOOKMARK setPosition={setPosition} />
