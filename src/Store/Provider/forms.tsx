@@ -7,6 +7,7 @@ export type formData = {
   formName: string
   active: boolean
   questions: question[]
+  formBg?: string
   _id: string
 }
 

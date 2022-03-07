@@ -63,7 +63,11 @@ const Form = () => {
     <StyledForm>
       {loading && <FormLoader />}
       {success && <Success />}
-      <img src={FormBg} alt="" className="bg" />
+      <img
+        src={selected?.formBg ? selected.formBg : FormBg}
+        alt=""
+        className="bg"
+      />
 
       <section>
         <div className="left">
