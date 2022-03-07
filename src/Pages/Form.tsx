@@ -6,10 +6,10 @@ import { useParams } from "react-router-dom"
 import { formData, useForms } from "Store/Provider/forms"
 import FormBg from "Media/Form/formBg.jpg"
 import TextAreaInput from "Components/Forms/TextAreaInput"
-import FormLoader from "Components/Forms/Loader"
 import CheckboxInput from "Components/Forms/CheckboxInput"
 import SubmitResponse from "API/SubmitResponse"
 import Success from "Components/Forms/Success"
+import Buffer from "Components/Buffer"
 
 const Form = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -24,7 +24,6 @@ const Form = () => {
   useEffect(() => {
     ;(async () => {
       const form = await getFormByName(formName || "")
-
       form && setSelected(form)
     })()
   }, [formName, getFormByName])
@@ -47,8 +46,8 @@ const Form = () => {
   }, [error])
 
   useEffect(() => {
-    document.title = `IIChE TIET ● ${selected?.formName}`
-  }, [selected])
+    document.title = `IIChE TIET ● ${formName}`
+  }, [formName])
 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     setError("")
@@ -61,66 +60,72 @@ const Form = () => {
 
   return (
     <StyledForm>
-      {loading && <FormLoader />}
+      {/* { && <FormLoader />} */}
       {success && <Success />}
-      <img
-        src={selected?.formBg ? selected.formBg : FormBg}
-        alt=""
-        className="bg"
-      />
+      {selected && !loading ? (
+        <>
+          <img
+            src={selected?.formBg ? selected.formBg : FormBg}
+            alt=""
+            className="bg"
+          />
 
-      <section>
-        <div className="left">
-          <Header />
-          <div className="formName">
-            <h1>{selected?.formName}</h1>
-          </div>
-        </div>
+          <section>
+            <div className="left">
+              <Header />
+              <div className="formName">
+                <h1>{selected?.formName}</h1>
+              </div>
+            </div>
 
-        <div className="right" ref={ref}>
-          <div className="right_bg"></div>
-          <form onSubmit={submitHandler}>
-            <p className="error">{error}</p>
-            {selected?.questions.map((question, index) => {
-              if (
-                question.responseType === "String" ||
-                question.responseType === "Email" ||
-                question.responseType === "Phone" ||
-                question.responseType === "Number"
-              )
-                return (
-                  <StringInput
-                    key={index}
-                    input={input}
-                    setInput={setInput}
-                    question={question}
-                  />
-                )
-              if (question.responseType === "Text")
-                return (
-                  <TextAreaInput
-                    key={index}
-                    input={input}
-                    setInput={setInput}
-                    question={question}
-                  />
-                )
-              if (question.responseType === "Checkbox")
-                return (
-                  <CheckboxInput
-                    key={index}
-                    setInput={setInput}
-                    question={question}
-                  />
-                )
+            <div className="right" ref={ref}>
+              <div className="right_bg"></div>
+              <form onSubmit={submitHandler}>
+                <p className="error">{error}</p>
+                {selected?.questions.map((question, index) => {
+                  if (
+                    question.responseType === "String" ||
+                    question.responseType === "Email" ||
+                    question.responseType === "Phone" ||
+                    question.responseType === "Number"
+                  )
+                    return (
+                      <StringInput
+                        key={index}
+                        input={input}
+                        setInput={setInput}
+                        question={question}
+                      />
+                    )
+                  if (question.responseType === "Text")
+                    return (
+                      <TextAreaInput
+                        key={index}
+                        input={input}
+                        setInput={setInput}
+                        question={question}
+                      />
+                    )
+                  if (question.responseType === "Checkbox")
+                    return (
+                      <CheckboxInput
+                        key={index}
+                        setInput={setInput}
+                        question={question}
+                      />
+                    )
 
-              return null
-            })}
+                  return null
+                })}
 
-            <button>Submit</button>
-          </form>
-        </div>
-      </section>
+                <button>Submit</button>
+              </form>
+            </div>
+          </section>
+        </>
+      ) : (
+        <Buffer />
+      )}
     </StyledForm>
   )
 }

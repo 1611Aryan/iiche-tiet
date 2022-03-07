@@ -26,7 +26,7 @@ const StringInput: React.FC<{
         value={input[question.name]}
         name={question.name}
         required={question.required}
-        type="text"
+        type={question.responseType === "Email" ? "email" : "text"}
       />
     </InputBaseStyle>
   )
