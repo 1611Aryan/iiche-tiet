@@ -7,11 +7,11 @@ import { useEffect } from "react"
 import DesignedBy from "Sections/DesignedBy"
 
 const Home = () => {
-  const notification = {
-    message: "Chem-i-Leon registrations now Live🧪🔥🔥",
-    link: "forms",
-  }
-  //const notification = null
+  //const notification = {
+  //   message: "Chem-i-Leon registrations now Live🧪🔥🔥",
+  //   link: "forms",
+  // }
+  const notification = null
 
   useEffect(() => {
     document.title = `IIChE TIET`
