@@ -38,6 +38,8 @@ const GlobalStyle = () => {
     button,
     input,
     textarea {
+      font-family: inherit;
+      color: inherit;
       border: 0;
       &:hover,
       &:focus {

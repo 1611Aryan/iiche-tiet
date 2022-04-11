@@ -18,7 +18,7 @@ const ThumbnailForm: React.FC<{ form: form }> = ({ form }) => {
       className={!form.active ? "inactive" : ""}
     >
       <div>
-        <img src={formIcon} alt="formIcon" />
+        <img src={form.logo ? form.logo : formIcon} alt="formIcon" />
       </div>
       <button>
         <span> {form.formName}</span>
@@ -50,9 +50,9 @@ const StyledThumbnail = styled.li`
     background: #52b1b1;
     overflow: hidden;
     img {
-      max-width: 70%;
-      height: 70%;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   button {

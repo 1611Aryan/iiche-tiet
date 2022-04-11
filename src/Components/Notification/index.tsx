@@ -32,6 +32,7 @@ const StyledNotifcation = styled.header`
   h1 {
     font-weight: 400;
     font-size: clamp(0.8rem, 1vw, 1.2rem);
+    white-space: pre-line;
   }
   button {
     padding: calc(var(--padding) / 5);

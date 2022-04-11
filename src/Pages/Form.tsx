@@ -106,7 +106,10 @@ const Form = () => {
                         question={question}
                       />
                     )
-                  if (question.responseType === "Checkbox")
+                  if (
+                    question.responseType === "Checkbox" ||
+                    question.responseType === "Radio"
+                  )
                     return (
                       <CheckboxInput
                         key={index}

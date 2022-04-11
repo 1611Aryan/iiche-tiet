@@ -8,6 +8,7 @@ export type formData = {
   active: boolean
   questions: question[]
   formBg?: string
+  logo?: string
   _id: string
 }
 
@@ -15,18 +16,13 @@ export type form = {
   formName: formData["formName"]
   _id: formData["_id"]
   active: formData["active"]
+  logo?: string
 }
 
 export type forms = {
   forms: form[] | undefined
   getFormByName: (formName: string) => Promise<void | formData>
 }
-
-// type forms = {
-//   forms: form[]
-//   formNames: string[]
-//   getFormByName: (formName: string) => void | form
-// }
 
 export type question = {
   question: string
@@ -37,6 +33,7 @@ export type question = {
     | "Email"
     | "Text"
     | "Checkbox"
+    | "Radio"
     | string
   name: string
   options?: string[]

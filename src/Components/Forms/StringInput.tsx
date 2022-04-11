@@ -23,7 +23,6 @@ const StringInput: React.FC<{
 
       <input
         onChange={changeHandler}
-        value={input[question.name]}
         name={question.name}
         required={question.required}
         type={question.responseType === "Email" ? "email" : "text"}

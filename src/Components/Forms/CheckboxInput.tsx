@@ -11,9 +11,13 @@ const CheckboxInput: React.FC<{
     }>
   >
 }> = ({ question, setInput }) => {
-  console.log(question)
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked)
+    if (question.responseType === "Radio")
+      setInput(input => ({
+        ...input,
+        [question.name]: e.target.value,
+      }))
+    else if (e.target.checked)
       setInput(input => ({
         ...input,
         [question.name]: [...input[question.name], e.target.value],
@@ -21,6 +25,7 @@ const CheckboxInput: React.FC<{
     else
       setInput(input => {
         const options = input[question.name] as string[]
+
         return {
           ...input,
           [question.name]: options.filter(val => val !== e.target.value),
@@ -30,14 +35,14 @@ const CheckboxInput: React.FC<{
 
   return (
     <InputBaseStyle>
-      <label htmlFor="department" className="label__header">
+      <label htmlFor={question.name} className="label__header">
         {parse(question.question)}
       </label>
 
       {question.options?.map((option, index) => (
         <div className="option" key={index}>
           <input
-            type="checkbox"
+            type={question.responseType.toLowerCase()}
             name={question.name}
             value={option}
             id={option}
